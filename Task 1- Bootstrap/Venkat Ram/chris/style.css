@@ -54,17 +54,3 @@ input[type="text"]{
     align-items: center;
     margin: 10px;
 }
-
-.about-h1{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: start; */
-    justify-content: center;
-    align-items: center;
-}
-
-<div class="container my-5 about-h1">
-        <h1 class="display-1 ">About</h1>
-        <p class="py-1 px-2" style="position: absolute; background-color: white; justify-self: center;">Who Am I</p>
-    </div>  
