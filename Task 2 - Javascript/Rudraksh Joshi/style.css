@@ -2,9 +2,17 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+nav {
+  width: 200px;
+}
+
 input {
   cursor: pointer;
 }
+
 .circle {
   width: 20px;
   height: 20px;
@@ -42,17 +50,15 @@ input {
   }
   /* hiding header elements */
   .hidden {
-    visibility: hidden;
+    display: none;
   }
 
   /* moving product container  */
   .add-product-container {
-    margin-left: 50%;
+    margin-left: 70%;
   }
-}
-@media (max-width: 300px) {
-  .add-product-container {
-    margin-left: -50%;
+  .footer {
+    margin-left: -100px;
   }
 }
 
@@ -63,7 +69,4 @@ footer ul li {
   background-color: darkgreen;
   color: white;
   font-weight: bold;
-}
-nav {
-  width: 200px;
 }
