@@ -11,6 +11,7 @@ function createTable(data) {
         let tRow = document.createElement("tr");
         tRow.setAttribute("scope","row")
         tRow.innerHTML = `
+     <td><input type="radio" />    &nbsp;  </td>   
     <td class="p-2"><img src="${data[i].image}" alt="Girl in a jacket" class="img-fluid" width="65px" height="65px"></td>
 
     <td class=" fw-medium fs-6 p-2">${data[i].title}</td>
