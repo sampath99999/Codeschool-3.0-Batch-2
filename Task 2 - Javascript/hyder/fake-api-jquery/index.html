@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .sidenav {
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+        display:block;
+        }
+        #lg-sidebar ul li a{
+            text-decoration: none;
+            color: grey;
+            height: auto;
+        }
+        #lg-sidebar ul li a:hover{
+            color: black;
+        }
+        #table td{font-size: 13px;}
+        @media only screen and (max-width: 450px) and (min-width: 200px) {
+            .sidenav a {font-size: 10px;}
+            #small {visibility: visible;display: contents;}
+            #lg-sidebar a{visibility: hidden; ;display: none;}
+            #logo{font-size: 14px;float: inline-end;}
+            #table th{width: fit-content;font-size: 8px;}
+            #search-box{padding-top: 57px;margin-left: 0px;}
+            #search{padding-top: 4px;padding-left: 0%;margin-top: 35px;margin-bottom: 0px;}
+            #search-count{visibility: hidden; display: none;}
+            #table td{font-size: 8px;}
+            #table-hr{visibility: hidden;}
+                    
+        }
+
+        @media only screen and (max-width: 991px) and (min-width: 450px) {
+        .sidenav a {font-size: 15px;visibility: visible;display: contents;}
+            #small {visibility: visible;display: contents;}
+            #lg-sidebar a{visibility: hidden; ;display: none;}
+            #logo{font-size: 20px;float: inline-end;box-shadow: none;}
+            #search-box{padding-top: 70px;margin-left: 0px;top: 100px;}
+            #search{padding-top: 10px;margin-top: 25px;padding-bottom: 5px;}
+            #table td{font-size: 12px;}
+            #table th{width: fit-content;font-size: 10px;}
+            #percentage-chart{margin-top: 100px;}
+            #search-count{visibility: hidden; display: none;}
+            #table{margin-top: 300px;}
+            #table-hr{visibility: hidden;}
+            
+        }
+        @media only screen and (max-width: 1200px) and (min-width: 450px){
+            #table-hr{visibility: hidden;}
+        }
+        
+        
+
+
+    </style>
+</head>
+
+<body>
+    <!--site-header-->
+    <div class="container-fluid" style="overflow-y: hidden;">
+        
+        <div class="row px-1 pb-xl-1 pb-lg-1 position-fixed" style="top: 0; left: 0; right: 0; z-index: 1030;overflow: hidden;background-color: white;">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+                <span class="text-danger fw-bold fs-3">&#8226</span>
+                <span class="text-warning fw-bold fs-3">&#8226</span>
+                <span class="text-success fw-bold fs-3">&#8226</span>
+            
+            </div>
+            <div class="col-6 col-lg-6 col-md-6 col-sm-6 text-dark mt-3" style="font-size: 11px;background-color: rgb(125, 123, 123);height: 20px;border-radius: 5px;">
+                    <p class="text-center"><i class="bi bi-lock-fill"></i> conceals.management.care 
+                        <span class="ms-2 fw-bold"><i class="bi bi-arrow-clockwise"></i></span></p>
+            </div>
+            <div class="col-3 col-lg-3 col-md-3 col-sm-3 text-end mt-3 fw-bold text-secondary">
+                <i class="bi bi-box-arrow-up"></i>
+                <i class="bi bi-plus-lg ms-3"></i>
+            </div>
+            <hr class="text-secondary mt-0">
+        </div>
+        
+    </div>
+    
+    <div class="row">
+
+
+        <!-- side-bar -->
+        <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12   position-fixed mt-5 mb-0 bg-white" style="z-index: 2000;"  >
+            <h5 class="ms-3 mt-2 py-0 " id="logo" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Conceals.</h5>
+            <div class="sidenav d-flex flex-column flex-wrap position-static mt-0" id="lg-sidebar">
+                    <ul class="list-unstyled ms-2 text-secondary " style="font-size: 12px;">
+                      <li class="mb-3"><a href="#"><i class="bi bi-house-door"></i> Overview</a></li>
+
+                      <li class="mb-3"><div class="dropdown bg-none">
+                        <a  class="dropdown-toggle text-decoration-none " data-bs-toggle="dropdown" ><i class="bi bi-journal-album"></i> Management</a>
+                        <div class="dropdown-menu bg-none">
+                            <a class="dropdown-item " href="#">Member</a>
+                            <a  class="dropdown-item " href="#">Product List</a>
+                            <a class="dropdown-item " href="#">Partner List</a>                            
+                        </div>
+                        </div>
+                      </li>
+                                            
+                      <li class="mb-3"><div class="dropdown bg-none">
+                        <a  class="dropdown-toggle text-decoration-none" data-bs-toggle="dropdown"><i class="bi bi-bar-chart-line"></i> Analytics</a>
+                        <div class="dropdown-menu bg-none">
+                          <a class="dropdown-item " href="#">Success</a>
+                          <a  class="dropdown-item" href="#">Canceled</a>
+                          <a class="dropdown-item" href="#">Hold</a>                           
+                        </div>
+                        </div></li>
+
+                      <li class="mb-3"><a href="#"><i class="bi bi-journal"></i> Accounting</a></li>
+
+                      <li class="mb-5"><a href="#"><i class="bi bi-file-earmark-text"></i> Reports</a></li>
+                      
+                      <li class="mb-3"><a href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                    <li class="mb-5"><a href="#"><i class="bi bi-bell"></i> Notifications</a></li>
+
+                    <li class="mb-3"><a href="#"><img src="download.png" style="height: 30px; width: 30px;border-radius: 50%;"> </a></li>
+                    <li class="mb-2 "><a href="#" class="text-danger"><i class="bi bi-box-arrow-right text-danger"></i> Logout</a></li>
+                    </ul>                                   
+            </div>
+        
+        <!-- drop down for small and medium device -->
+            <div class="sidenav d-flex flex-row flex-wrap py-0 " id="md-sidebar" style="visibility: hidden;display: none;margin-top: -80px;background-color: white;">           
+                    <div class="dropdown" id="small" style="margin-top: -100px;background-position;">
+                        <button class="btn btn-white dropdown-toggle fw-semibold btn-sm border-white" style="font-size: 10px;height: fit-content;" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bi bi-house-door fw-bold"></i> Overview</a>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#"><i class="bi bi-journal"></i> Accounting</a>
+                            <a class="dropdown-item" href="#"><i class="bi bi-file-earmark-text"></i> Reports</a>                       
+                            <div class="dropdown">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="nestedDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bi bi-journal-album"></i> Management
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="nestedDropdown">
+                                    <a class="dropdown-item" href="#">Nested Action</a>
+                                    <a class="dropdown-item" href="#">Another nested action</a>
+                                </div>
+                            </div>                       
+                            <a class="dropdown-item" href="#"><i class="bi bi-bell"></i> Notifications</a>
+                            <a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Settings</a>
+                            <div class="dropdown">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="nestedDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bi bi-bar-chart-line"></i> Analytics
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="nestedDropdown">
+                                    <a class="dropdown-item" href="#">Nested Action</a>
+                                    <a class="dropdown-item" href="#">Another nested action</a>
+                                </div>
+                            </div>
+                            <a class="dropdown-item" href="#"></a><i class="bi bi-box-arrow-right text-danger"> Logout</i>
+                        </div>
+                    </div>
+    
+                    <div class=" ">
+                        <a class="dropdown-item float-end" href="#"><img src="download.png" style="height: 20px; width: 20px;border-radius: 50%;"></a>
+                        <a class="dropdown-item" href="#"></a><i class="bi bi-box-arrow-right text-danger"> Logout</i>
+                    </div>
+                
+                  
+            </div>
+        </div>
+        
+
+
+
+<!--search-box-->
+        <div class=" col-lg-10 col-md-12 col-sm-12 col-12 ms-auto" id="search-box">
+            <div class="row shadow-sm w-100 pb-xl-1 pt-xl-2 pb-lg-1 pt-lg-2" id="search" style=" position: fixed;top: 60px;left: auto;z-index: 900;background-color: white;">
+                <div class="col-4 ms-0">
+                    <input type="search" placeholder="&#x1F50D Search" class="opacity-25 ms-2" style="height: 25px; width: 150px;" >
+                    
+                    <span id="search-count"><span class="text-dark fw-bold ms-2" style="font-size:10px;">6,540</span><span class="text-secondary" style="font-size: 10px;"> items</span></span>
+                </div>
+
+                <div class="col">
+                    <!--navbar-->
+                    <nav class="navbar navbar-expand-lg bg-none mt-0 float-xl-none float-lg-start float-end" style="z-index: 1500; font-size: 13px;" id="navbar-1">
+                        <div class="container-fluid">
+                          <button class="navbar-toggler mt-0 py-1 px-2 " type="button" data-bs-toggle="collapse" data-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon " style="font-size: 12px;"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto  mb-lg-0 fw-bold text-dark" style="font-size: 8px;color: black;">
+                                <li class="nav-item  me-3" >
+                                    <button type="button" class="btn btn-none  btn-sm fw-semibold shadow-sm" style="font-size: 12px;"><i class="bi bi-toggle-on " ></i> Show Statistics</button>
+                                </li>
+                                <li class="nav-item  me-3">
+                                    <button type="button" class="btn btn-none  btn-sm fw-semibold shadow-sm" style="font-size: 12px;"><i class="bi bi-list-task "></i> Filter</button>
+                                  </li>
+                                
+                                <li class="nav-item  me-3">
+                                    <button type="button" class="btn btn-none btn-sm fw-semibold shadow-sm" style="font-size: 12px;"><i class="bi bi-card-checklist"></i> List</button>
+                                </li>
+                                <li class="nav-item  " style="margin-right: 70px;" id="product-button-space">
+                                    <button type="button" class="btn btn-none  btn-sm fw-semibold shadow-sm" style="font-size: 12px;"><i class="bi bi-download"></i> Export</button>
+                                </li class="nav-item ">
+                                    <button type="button" class="btn btn btn-none  btn-sm fw-semibold shadow-sm" style="background-color: yellow;font-size: 12px;"><i class="bi bi-plus"></i>New Product</button>
+                                </li>
+                            </ul>
+                          
+                      </nav>
+                
+                </div>
+                
+            </div>
+<!--percentages-->            
+            <div class="row shadow-sm w-100 mt-lg-5 mt-xl-5 pt-xl-5 pt-lg-5" style="padding-top: 10px; margin-top: 85px;padding-left: 10px; position: fixed;top: 60px;left: auto;;background-color: white;">
+                <div class="col-lg-2 col-md-6 col-sm-6 col-6 col-xl-2">
+                    <p class="text-secondary  p-0" style="font-size:x-small;">Payment Success</p>
+                    <p class="mt-0 p-0 fw-bold">$412.450,
+                        <span class="text-secondary">99</span>
+                        <button class="ms-1 type-btn  text-danger disabled" style=" background-color:rgb(239, 233, 233);border: none;font-size: 9px; outline: none; border-radius:5px;">
+                            <i class="bi bi-caret-down-fill text-danger"></i>-12,8%</button>
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6 col-6 col-xl-2">
+                    <p class="text-secondary  p-0" style="font-size:x-small;">Payment Canceled</p>
+                    <p class="mt-0 p-0 fw-bold">894
+                        <button class="ms-1 type-btn  text-success disabled" style=" background-color:rgb(224, 236, 224);border: none;font-size: 9px; outline: none; border-radius:5px;">
+                            <i class="bi bi-caret-up-fill text-success"></i>+12,4%</button>
+                            <span class="text-secondary" style="font-size: 8px;">(+4.32%)</span>
+                    </p>
+
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6 col-6 col-xl-2">
+                    <p class="text-secondary  p-0" style="font-size:x-small;">Total Customer</p>
+                    <p class="mt-0 p-0 fw-bold">2.850
+                        <button class="ms-1 type-btn  text-success disabled" style=" background-color:rgb(224, 236, 224);border: none;font-size: 9px; outline: none; border-radius:5px;">
+                            <i class="bi bi-caret-up-fill text-success"></i>+24,6%</button>
+        
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6 col-6 col-xl-2">
+                    <p class="text-secondary  p-0" style="font-size:x-small;">Total Orders</p>
+                    <p class="mt-0 p-0 fw-bold">10.650
+                        <button class="ms-1 type-btn  text-danger disabled" style=" background-color:rgb(239, 233, 233);border: none;font-size: 9px; outline: none; border-radius:5px;">
+                            <i class="bi bi-caret-down-fill text-danger"></i>-14,2%</button>
+                            <span class="text-secondary" style="font-size: 8px;">(+$245)</span>
+                    </p>
+                </div>
+            </div>
+<!--table-->
+            <div class="row mt-4" style="z-index: 0;">
+                <hr id="table-hr" style="margin-top: 210px; margin-left: 5px;color: rgb(124, 120, 120);">
+                <div class="col-12">
+                    <table class="table w-100 shadow-sm mt-lg-1 table-hover table-responsive-sm table-responsive-lg table-responsive-md table-responsive-xl table-responsive-xxl table-responsive " style="margin-top: 0px;" id="table">
+                        <thead class="text-secondary" id="table-font" style="font-size: 10px; color: grey;">
+                            <th></th>
+                            <th></th>
+                            <th>TITLE&</th>
+                            <th>PRICE</th>
+                            <th>STOCK</th>
+                            <th>CATEGORY</th>
+                            <th>RATE</th>
+                        </thead>
+                        <tbody id="store" class="text-dark" style="font-size: 8px;"></tbody>
+                    </table>                                     
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js">
+
+</script>
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</html>
