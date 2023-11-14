@@ -1,68 +1,65 @@
 "use strict";
 
-// adds products to the page
+
 function renderProducts(items) {
+    // looping is
+    // for the insertion of product in the html part
     for (let item in items) {
-        const product = items[item];
-        const productName = product.title;
-        const productDescription = product.description;
-        const productPrice = product.price;
-        const productRating = product.rating.rate;
-        const productVolume = product.rating.count;
-        const productType = product.category;
+        var product = items[item];
+        var Name = product.title;
 
-        const productStock = Math.round(Math.random() * 100);
-        const productReview = Math.round(Math.random() * 50);
-        const productImage = product.image;
+        var Price = product.price;
+        var Rating = product.rating.rate;
+        var Volume = product.rating.count;
+        var Type = product.category;
+        // for creating the random stock and many more
+        var Stock = Math.round(Math.random() * 100);
+        var Review = Math.round(Math.random() * 50);
+        var Image = product.image;
 
-        // Html to insert
-        const html = ` 
+        var Frontend = ` 
         <tr>
                 <th scope="row">
-                    <div class="form-check col-4 d-flex flex-column" style="padding-left:25px;">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <div class="form-check col-4 " style="padding-left:25px; display:flex; flex-direction:row;">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
                         <label class="form-check-label" for="flexCheckChecked">
-                      <img id="P-IMAGE" src="${productImage}" alt="" style="height:70px;width:70px; >
+                      <img id="P-IMAGE" src="${Image}" alt="" style="height:70px;width:70px; >
                       
                     </label>
-                        <p id="P-NAME">${productName}</p>
+                        <p id="P-NAME" style="font-size:10px;">${Name}</p>
                         
                     </div>
                 </th>
                 <td>
                     <p id="P-PRICE">
-                        ${productPrice}
+                        ${Price}
                     </p>
                 </td>
                 <td>
-                    <p id="P-STOCK">${productStock}
+                    <p id="P-STOCK">${Stock}
                     </p>
                 </td>
                 <td>
-                    <p id="P-VOLUME">${productVolume}
+                    <p id="P-VOLUME">${Volume}
                     </p>
                 </td>
                 <td>
-                    <p id="P-TYPE">${productType}
+                    <p id="P-TYPE">${Type}
                     </p>
                 </td>
                 <td>
-                    <p id="P-RATING">${productRating}Rating +  ${productReview}Review
+                    <p id="P-RATING">${Rating}Rating +  ${Review}Review
                     </p>
                 </td>
 
             </tr>
-        <!-- Single product row end -->`;
-        $(html).insertAfter(".tbody");
+        `;
+
+        $(Frontend).insertAfter(".tbody");
     }
 }
 
-function setNotifications() {
-    const randomNum1 = Math.round(Math.random() * 20);
-    const randomNum2 = Math.round(Math.random() * 20);
-    $(".notifications").text(randomNum1);
-    $(".analytics").text(randomNum2);
-}
+
 
 const url = `https://fakestoreapi.com/products`;
 

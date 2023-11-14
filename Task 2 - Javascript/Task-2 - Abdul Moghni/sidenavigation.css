@@ -102,3 +102,8 @@ content */
         display: none;
     }
 }
+
+#P-NAME {
+    font-size: 6px;
+    !important;
+}
