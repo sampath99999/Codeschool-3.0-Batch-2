@@ -346,3 +346,17 @@ WHERE
     WHERE sd.employee_id = emp.id
     AND DATE_TRUNC('MONTH', sd.paid_on) = DATE_TRUNC('MONTH', CURRENT_DATE - INTERVAL '1 month')
   );
+
+--10) List of employees whos actual salary net amount not matched with net amount of salary received in last month. (employee code, name, actual net, last month net salary).
+
+SELECT
+    emp.empcode "Employee Code",
+    emp.f_name || ' ' || emp.l_name || ' ' || emp.surname "Employee Name",
+    esb.amount "Actual Net Salary",
+    sd.net "Last Month Net Salary"
+FROM employees emp
+    JOIN employee_salary_breakup esb ON emp.id = esb.employee_id AND esb.salary_type_id = 1
+    JOIN salary_details sd ON emp.id = sd.employee_id
+WHERE
+    DATE_TRUNC('MONTH', sd.paid_on) = DATE_TRUNC('MONTH', CURRENT_DATE - INTERVAL '1 month')
+    AND esb.amount != sd.net;
