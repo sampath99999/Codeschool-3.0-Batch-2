@@ -1,5 +1,79 @@
 
 create database  student;
+CREATE TABLE Customer (
+    customer_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100) UNIQUE,
+    phone_number VARCHAR(20),
+    address VARCHAR(255)
+);
+
+CREATE TABLE Product (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    price DECIMAL(8,2),
+    quantity INTEGER,
+    description TEXT
+);
+
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    product_id INT,
+    order_date DATE,
+    order_amount INT,
+    quantity INT,
+    total_amount DECIMAL(10, 2),
+    FOREIGN KEY (customer_id) REFERENCES Customer(customer_id),
+    FOREIGN KEY (product_id) REFERENCES Product(product_id)
+);
+
+CREATE TABLE Shipping (
+    shipping_id INT PRIMARY KEY,
+    order_id INT,
+    status INT,
+    shipping_date DATE,
+    delivery_date DATE,
+    FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    CHECK (status IN (1, 2, 3, 4))
+);
+insert into customer(
+    customer_id,first_name, last_name,
+    email,phone_number
+) VALUES
+(1,'John','Doe', 'john.doe@gmail.com', '+91-876543
+'),
+(2,'Jane','Smith', 'janesmith@yahoo.com', '+91-765432
+'),
+(3,'Mary','Brown', 'marybrown@hotmail.com', '+91-654321
+'),
+(4,'Robert','Williams', 'robertwilliams@aol.com', '+91-54321
+');
+INSERT INTO product(product_id,product_name,
+price,description)VALUES(
+    1,'Product A',100.00,'This is a great product'
+),
+(2,'Product B',200.00,'Another good product'),
+(3,'Product C',300.00,'The best one yet!'),
+(4,'Product D',400.00,'Awesome product');
+insert into orders(
+    order_id,customer_id,product_id,
+    order_date,
+    quantity,order_amount,total_amount)values(
+    1,1,1,'2021-01-01',2,200.00,400
+),
+(2,1,2,'2021-02-01',3,300.00,900),
+(3,2,3,'2021-03-01',4,400.00,160
+),
+(
+    4,3,4,'2021-04-01',5,500.00,250
+);
+insert into shipping(shipping_id,order_id,status,shipping_date,delivery_date) values(1,
+1,1,'2021-06-01','2021-07-01'),(2,2
+,2,'2021-07-01','2021-08-01'),(3,3,
+3,'2021-08-01','2021-09-01'),(4,4,4
+,'2021-09-01','2021-10-01');
 SELECT * FROM customer;
 SELECT * from orders;
 SELECT  * from shipping;
