@@ -13,6 +13,10 @@ function bodyload() {
           var tdDescription = document.createElement("td");
           var tdRating = document.createElement("td");
 
+          var checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          tdImage.appendChild(checkbox);
+
           tdRating.innerHTML = `<span class="glyphicon glyphicon-star text-danger"></span>${item.rating.rate} ${item.rating.count}`;
           tdTitle.innerHTML = item.title;
           tdPrice.innerHTML = item.price;
