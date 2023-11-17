@@ -27,7 +27,6 @@ CREATE TABLE
         first_name VARCHAR(255) NOT NULL,
         last_name VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
-        address TEXT NOT NULL,
         PRIMARY KEY (customer_id)
     );
 
@@ -52,6 +51,21 @@ CREATE TABLE
         FOREIGN KEY (order_id) REFERENCES Orders (order_id),
         FOREIGN KEY (product_id) REFERENCES Products (product_id)
     );
+
+CREATE TABLE
+    customer_Address (
+        customer_address_id SERIAL NOT NULL,
+        customer_id INT NOT NULL,
+        customer_address_description VARCHAR(50),
+        PRIMARY KEY(customer_address_id),
+        FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+    );
+
+-- for future
+
+-- CREATE TABLE product_images(
+
+-- )
 
 -- inserting into categories table
 
@@ -162,7 +176,7 @@ INSERT INTO
         quantity,
         price
     )
-VALUES (1, 1, 1, 999.99), (2, 2, 2, 39.98), (3, 3, 1, 49.99), (4, 4, 3, 89.97), (5, 5, 1, 79.99), (6, 6, 1, 699.99), (7, 7, 2, 79.98), (8, 8, 1, 149.99), (9, 9, 3, 44.97), (10, 10, 2, 49.98);
+VALUES (1, 1, 1, 999.99), (2, 2, 2, 19.99), (3, 3, 1, 49.99), (4, 4, 3, 29.99), (5, 5, 1, 79.99), (6, 6, 1, 699.99), (7, 7, 2, 39.99), (8, 8, 1, 149.99), (9, 9, 3, 14.99), (10, 10, 2, 24.99);
 
 -- price = total quantity of a  particular item * quantity of that particular item
 
@@ -210,6 +224,8 @@ VALUES(12, 6, 1, 699.9)
 
 -- Retrieve data from tables
 
+SELECT * FROM customer_address;
+
 SELECT * FROM customers;
 
 SELECT * FROM categories;
@@ -236,7 +252,9 @@ DROP TABLE orderitems;
 
 SELECT
     orderitems.order_id,
-    sum(orderitems.price) AS each_order_price
+    sum(
+        orderitems.price * orderitems.quantity
+    ) AS each_order_price
 FROM orderitems
     INNER JOIN products on orderitems.product_id = products.product_id
 GROUP BY orderitems.order_id
@@ -247,7 +265,7 @@ ORDER BY orderitems.order_id;
 SELECT
     products.category_id,
     categories.name AS category_name,
-    sum(orderitems.price) AS total_revenue
+    COALESCE(sum(orderitems.price), 0) AS total_revenue
 FROM orderitems
     INNER join products ON orderitems.product_id = products.product_id
     INNER join categories on products.category_id = categories.category_id
@@ -282,7 +300,7 @@ WITH total_orders_customer AS(
             customers.first_name AS first_name,
             customers.last_name AS last_name
         from orders
-            INNER join customers on orders.customer_id = customers.customer_id
+            RIGHT join customers on orders.customer_id = customers.customer_id
         group by
             orders.customer_id,
             customers.first_name,
@@ -554,7 +572,7 @@ SELECT
     ) AS average_revenue_per_category
 FROM orderitems
     INNER JOIN products ON orderitems.product_id = products.product_id
-    INNER JOIN categories ON products.category_id = categories.category_id
+    LEFT JOIN categories ON products.category_id = categories.category_id
 GROUP BY
     products.category_id,
     categories.name
