@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./sidenavigation.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="logo" id="log" Style=" display:flex ;flex-direction:row; margin-right:15px; ">
+        <h1>Conceals.</h1><button onclick="hanburger() "><i class="bi bi-list "></i></button>
+    </div>
+    <div class="sidenav" id="sidenavs">
+        <div class="logo" id="logos" Style=" margin-top:-15px;display:flex ;flex-direction:row; margin-right:15px; ">
+            <h1>Conceals.</h1><button id="buts" onclick="hanburger() "><i class="bi bi-list "></i></button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="itemss " id="items">
+            <a href="#overview " style="font-size:18px; "><i class="bi bi-house-door "></i> Overview</a>
+            <button class="dropdown-btn " style="font-size:18px; "> <i class="bi bi-card-list "></i> Management
+            <i class="bi bi-caret-down-fill "></i>
+          </button>
+            <div class="dropdown-container " style="font-size:18px; ">
+                <a href="# ">Member</a>
+                <a href="# ">Product List</a>
+                <a href="# ">Partner List</a>
+            </div>
+            <a href="#analytics " style="font-size:18px; "><i class="bi bi-bar-chart-fill "></i>Analytics</a>
+            <a href="#accounting " style="font-size:18px; "><i class="bi bi-person-vcard "></i>Accounting</a>
+            <a href="#reports " style="font-size:18px; ">Reports</a>
+
+            <a href="setting " style="font-size:18px; ">Setting</a>
+            <a href="#notification " style="font-size:18px; ">Notification</a>
+            <br>
+            <br><br><br><br><br><br><br>
+            <a href="#account " style="font-size:18px; "><i class="bi bi-person-bounding-box "></i>Account</a>
+            <a href="#logout " style="font-size:18px; "><i class="bi bi-box-arrow-left "></i>Logout</a>
+
+        </div>
+    </div>
+
+    <div class="main ">
+        <div class="container-fluid ">
+            <div class="row ">
+                <div class="col-12 ">
+                    <nav class="navbar navbar-light " id="topnav" style="background-color:white; ">
+                        <div class="container-fluid ">
+                            <form class="d-flex col-4 ">
+                                <input class="form-control me-2 " type="search " placeholder="Search " aria-label="Search ">
+                                <button class="btn btn-outline-success " type="submit ">Search</button>
+
+                            </form>
+
+                            <span class="items-result ">
+                                <h6>6540 Items</h3>
+                                </span>
+                            <div class="col-1 "></div>
+                            <button type="button " class="btn btn-light "><i class="bi bi-toggle-on "></i> Show Statistics</button>
+                            <button type="button " class="btn btn-light "><i class="bi bi-list-ul "></i> Filter</button>
+                            <button type="button " class="btn btn-light "><i class="bi bi-list-ul "></i> List</button>
+                            <button type="button " class="btn btn-light "><i class="bi bi-download "></i> Export</button>
+                            <button type="button " class="btn btn-warning " style="background-color:yellow; "><i class="bi bi-plus-lg "></i> Add Product</button>
+
+                        </div>
+                    </nav>
+
+                    <!-- <div class="extopnav " style="display:flex ;flex-direction:row; margin-right:15px; ">
+                        <span>
+                        <h1>Conceals.</h1></span><button onclick="hanburger() "><i class="bi bi-list "></i></button>
+                    </div> -->
+
+                    <nav class="navbar navbar-light mt-5 " style="background-color:white; ">
+                        <div class="container-fluid ">
+                            <div class="col-md-3 p-1 border-right ">
+                                <div style="display:flex; flex-direction: column; ">
+                                    <div style="color:darkgrey ">
+                                        <p>Payment Success</p>
+                                    </div>
+
+                                    <div style="display:flex; flex-direction: row; ">
+                                        <h4>$412.450,99</h4> <button type="button " class="btn btn-warning ms-1 " style="background-color:#ffe6e6;color:red;height:30px;width:120px; "><i class="bi bi-caret-down-fill "></i> -12.8%</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 p-1 border-right ">
+                                <div style="display:flex; flex-direction: column; ">
+                                    <div style="color:darkgrey ">
+                                        <p>Payment Canceled</p>
+                                    </div>
+
+                                    <div style="display:flex; flex-direction: row; ">
+                                        <h4>894</h4> <button type="button " class="btn btn-warning ms-1 " style="background-color:#d6f5d6; color:green;height:30px;width:120px; "><i class="bi bi-caret-up-fill "></i> +12.4%</button>
+                                        <p style="color:darkgray; ">(+4.32%)</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-2 p-1 border-right ">
+                                <div style="display:flex; flex-direction: column; ">
+                                    <div style="color:darkgrey ">
+                                        <p>Total Customer</p>
+                                    </div>
+
+                                    <div style="display:flex; flex-direction: row; ">
+                                        <h4>2.850</h4> <button type="button " class="btn btn-warning ms-1 " style="background-color:#d6f5d6; color:green;height:30px;width:120px; "><i class="bi bi-caret-up-fill "></i> +24.6%</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3 p-1 border-right ">
+                                <div style="display:flex; flex-direction: column; ">
+                                    <div style="color:darkgrey ">
+                                        <p>Total Orders</p>
+                                    </div>
+
+                                    <div style="display:flex; flex-direction: row; ">
+                                        <h4>10.650</h4> <button type="button " class="btn btn-warning ms-1 " style="background-color:#ffe6e6;color:red; height:30px;width:120px; "><i class="bi bi-caret-down-fill "></i> -14.2%</button>
+                                        <p style="color:darkgrey; "> (+$245)</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+        <table class="table ">
+            <thead>
+                <tr class="table-active ">
+                    <th scope="col " class="col-4 " style="font-size:17px; ">ITEM NAME <i class="bi bi-caret-down-fill "></i></th>
+                    <th scope="col " class="col-2 " style="font-size:17px; ">PRICE <i class="bi bi-caret-down-fill "></i></th>
+                    <th scope="col " class="col-2 " style="font-size:17px; ">STOCK <i class="bi bi-caret-down-fill "></i></th>
+                    <th scope="col " class="col-2 " style="font-size:17px; ">VOLUME <i class="bi bi-caret-down-fill "></i></th>
+                    <th scope="col " class="col-2 " style="font-size:17px; ">TYPE <i class="bi bi-caret-down-fill "></i></th>
+                    <th scope="col " class="col-2 " style="font-size:15px; ">RAITING<i class="bi bi-caret-down-fill "></i></th>
+                </tr>
+            </thead>
+            <tbody class="tbody " style="font-size:6px; ">
+
+
+
+            </tbody>
+        </table>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL " crossorigin="anonymous "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js "></script>
+    <script src="./script.js ">
+    </script>
+    <script src="./sidenavigation.js ">
+    </script>
+
+</body>
+
+</html>
+
+</html>
