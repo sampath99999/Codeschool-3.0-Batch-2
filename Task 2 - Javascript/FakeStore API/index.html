@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>FakeStore</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="script.js"></script>
+    
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <div class="main-container d-flex">
+        <div class="sidebar" id="side_nav">
+            <div class="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
+                <h1 class="fs-1">Fake Store</h1>
+                <button class="btn d-md-none d-block close-btn px-1 py-0 text-white"><i class="fal fa-stream"></i></button>
+
+            </div>
+            <ul class="list-unstyled px-2">
+                <li class="active mt-4">
+                    <a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fal fa-home"></i> Overview</a>
+                </li>
+                <li class="">
+                    <a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fal fa-list"></i> Analytics</a>
+                </li>
+                <li class="">
+                    <a href="#" class="text-decoration-none px-3 py-2 d-block d-flex justify-content-between">
+                        <span><i class="fal fa-comment">Accounting</i></span>
+                        <span class="bg-light rounded-pill text-black py-0 px-2">02</span>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fal fa-envelope-open-text"></i> Reports </a>
+                </li>
+            </ul>
+            <hr class="mx-2">
+            <ul class="list-unstyled">
+                <li class="">
+                    <a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fal fa-bars"></i> Settings</a>
+                </li>
+                <li class="">
+                    <a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fal fa-bell"></i> Notifications</a>
+                </li>
+
+            </ul>
+
+        </div>
+        <div class="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between d-md-none d-block">
+                        <button class="btn px-1 py-0 open-btn me-2"><i class="fal fa-stream"></i></button>
+
+                    </div>
+                    <div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <i class="fal fa-bars"></i>
+                        </button>
+                    </div> 
+                    <div class="collapse navbar-collapse justify-content-space-between" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="pt-2">
+                                <input class="form-control ms-5" type="search" placeholder="Search..." aria-label="Search" style="width: 300px;">
+                            </li>
+                            <li class="nav-item active ms-5">
+                                <a class="nav-link" href="#"><button class="btn btn-outline-secondary"><i class='fas fa-toggle-on'></i> Show Statistics</button></a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><button class="btn btn-outline-secondary"><i class="fa fa-server"></i> Filter</button></a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><button class="btn btn-outline-secondary"><span class="glyphicon glyphicon-save"></span> Export</button></a>
+
+                            </li>
+                            <li class="nav-item pt-2" style="margin-left: 100px;">
+                                <button class="btn btn-success" style="width: 200px;">+ New Product</button>
+
+                            </li>
+
+                        </ul>
+                    
+                    </div>
+
+                </div>
+
+            </nav>
+            <div class="dashboard-content px-3 pt-4">
+                <div class="row ms-4" style="border: 1px solid gainsboro; border-radius: 5px; padding: 4px;">
+                    <div class="col">
+                        <p style="opacity: 0.6;">Payment Success</p>
+                        <h2>$498.34,<span style="opacity: 0.6;">67</span></h2>
+                    </div>
+
+                    <div class="col">
+                        <p style="opacity: 0.6;">Payment Cancelled</p>
+                        <h2>894</h2>
+                    </div>
+
+                    <div class="col">
+                        <p style="opacity: 0.6;">Total Customers</p>
+                        <h2>2.850</h2>
+                    </div>
+
+                    <div class="col">
+                        <p style="opacity: 0.6;">Total Orders</p>
+                        <h2>10.650</h2>
+                    </div>
+
+                </div>
+                <div class="d-flex flex-wrap overflow-auto mt-5">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Category</th>
+                                <th>Title</th>
+                                <th>Price</th>
+                                <th>Description</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody class="overflow-scroll">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+</body>
+</html>
