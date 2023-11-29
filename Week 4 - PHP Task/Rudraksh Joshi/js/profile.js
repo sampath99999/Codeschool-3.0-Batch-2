@@ -4,7 +4,6 @@ import { store_post } from "./ajax.js";
 
 $(document).ready(function () {
   restrictAcessLogin();
-  
   check_post(localStorage.getItem("token"));
 
   $("#contentError").hide();
@@ -146,7 +145,14 @@ $(document).ready(function () {
       $("#contentError").hide();
       $("#postContent").addClass("is-valid");
       $("#postContent").removeClass("is-invalid");
-      publishPost(postImageUrl, $("#postContent").val());
+      const userProfilePicSrc = $("#userProfilePicture").attr("src");
+      publishPost(
+        postImageUrl,
+        $("#postContent").val(),
+        "You",
+        userProfilePicSrc,
+        "now"
+      );
       store_post(
         localStorage.getItem("token"),
         $("#postContent").val(),
@@ -238,7 +244,11 @@ $(document).ready(function () {
       </p>
     </div>
     <!-- post image -->
-    <img src="${imageUrl}" class="card-img" alt="..." />
+    ${
+      imageUrl == ""
+        ? ""
+        : `<img src="${imageUrl}" class="card-img" alt="..." />`
+    }
     <!-- post footer -->
 
     <div class="card-body" style="margin-top: -12px">
