@@ -73,6 +73,7 @@ export function store_post(token, postContent, postImageUrl) {
       console.log(response);
 
       if (response.status == true) {
+        console.log("stored post ........");
       }
     },
     error: function (error) {
@@ -81,104 +82,29 @@ export function store_post(token, postContent, postImageUrl) {
   });
 }
 
-function publishPost(imageUrl, content) {
-  const html = `<div class="card px-2 mt-4">
-  <div class="card-body">
-    <h5 class="card-title d-flex gap-3">
-      <!-- todo this will be same as user profile -->
-      <img
-        src="../img/post2.avif"
-        alt=""
-        style="width: 40px; height: 40px; border-radius: 50%"
-      />
-      <div class="d-flex flex-column">
-        <span>Rudraksh </span>
-        <!-- todo insert time now - created time  -->
-        <div
-          class="fs-6 text-secondary d-flex align-items-center"
-        >
-          Posted by You &#183;<span class="ms-1">time</span
-          ><span class="ms-1 fs-5">&#183;</span>
-          <span
-            ><i class="ms-1 fa-solid fa-earth-americas fs-6"></i
-          ></span>
-        </div>
-      </div>
-    </h5>
-    <p class="card-text">
-     ${content}
-    </p>
-  </div>
-  <!-- post image -->
-  <img src="${imageUrl}" class="card-img" alt="..." />
-  <!-- post footer -->
+function getUserName(token) {
+  $.ajax({
+    url: "../php/get_username.php",
+    type: "GET",
+    headers: { token },
+    dataType: "JSON", //converts response into json
+    success: function (response) {
+      console.log(response.data.full_name);
 
-  <div class="card-body" style="margin-top: -12px">
-    <!-- row for like icons -->
-    <div
-      class="row d-flex justify-content-between align-items-center"
-    >
-      <div
-        class="col-12 d-flex justify-content-between align-items-center"
-      >
-        <div class="">
-          <div class="d-flex align-items-center mt-3">
-            <img
-              src="../img/like.svg"
-              alt=""
-              style="margin-right: -5px; z-index: 100"
-            />
-            <img src="../img/heart.svg" alt="" />
-            <span>42k</span>
-          </div>
-        </div>
-        <div>
-          <span class="text-secondary">220 comments</span
-          ><span class="ms-2 text-secondary">1.7k shares</span>
-        </div>
-      </div>
-      <!-- divider -->
-      <div class="px-3">
-        <hr class="mt-2" id="divider" />
-      </div>
-      <!-- row/col for comment share  like buttons -->
-      <div class="col">
-        <div
-          class="row d-flex justify-content-around"
-          id="row-like-comment-share"
-        >
-          <button class="btn text-white col-3">
-            <span
-              ><i
-                class="fa-regular fa-thumbs-up ms-2 me-2 fs-5 text-secondary"
-              ></i
-            ></span>
-            <span class="ms-1 text-secondary fw-bold"
-              >Like</span
-            >
-          </button>
-          <button class="btn text-white col-3">
-            <span
-              ><i
-                class="fa-regular fa-comments text-secondary"
-              ></i
-            ></span>
-            <span class="ms-1 text-secondary fw-bold"
-              >Comment</span
-            >
-          </button>
-          <button class="btn text-white col-3">
-            <span
-              ><i class="text-secondary fa-solid fa-share"></i
-            ></span>
-            <span class="ms-1 text-secondary fw-bold"
-              >Share</span
-            >
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>`;
-  $("#postBody").append(html);
+      if (response.status == true) {
+        console.log("got user name ........");
+        $("#post-username").append(response.data.full_name);
+        $("#postContent").attr(
+          "placeholder",
+          `Whats on your mind? ${response.data.full_name}`
+        );
+      } else {
+        window.alert("cannot get user name....log in again");
+      }
+    },
+    error: function (error) {
+      console.log(error);
+    },
+  });
 }
+getUserName(localStorage.getItem("token"));
