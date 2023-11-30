@@ -1,0 +1,49 @@
+*{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    font-size: large;
+}
+
+body{
+    background-color: rgb(216, 255, 255);
+}
+
+img{
+    height: 80px;
+    width: 110px;
+}
+
+input{
+    text-align: center;
+}
+
+#nav{
+    background-color: #f6e9e7;
+}
+
+#addacat{
+    border: 1px solid #F59088;
+    color: #F59088;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+#addacat:hover{
+    background-color:#faa6a0;
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: #ffcac6;
+}
+
+#border_fact{
+    margin-top: 3%;
+    border: 1px solid #F59088;
+    border-radius: 10px;
+    padding: 10px 5%;
+}
+
+.card {
+    background-color: rgb(246, 233, 231);
+}

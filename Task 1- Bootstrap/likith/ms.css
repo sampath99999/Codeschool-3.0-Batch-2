@@ -1,0 +1,117 @@
+header{
+    margin-bottom: 20px;
+    height: 900px;
+    background-image: url(ban2.jpg); width: 100%; background-size: cover; background-repeat: no-repeat;
+   
+}
+.navbar{
+    background-color: transparent;
+}
+.navbar i{
+    color:#fff !important;
+}
+
+.navlink{
+    color: #fff;
+}
+.cost{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    margin-top: 150px;
+}
+.hwe{
+    position: relative;
+    top: 12%;
+    left: 5%;
+    
+}
+body{
+    margin: 0%;
+    padding: 0%;
+    
+}
+.mast{
+    border-bottom: solid rgb(203, 201, 201);
+    margin:10px 3px;
+  
+}
+.Achievement{
+    margin:25px 0px;
+    height: 500px;
+}
+.Blogs{
+    margin-top: auto;
+
+}
+.Blogs img{
+    width: 100%;
+    height: max-content;
+}
+.footer2{
+   
+    width: 100%;
+    background-color: black;
+    color: white;
+    height: 60px;
+    margin-top: 10px;
+
+}
+.footer2 ul li
+{
+    display: inline;
+    padding-right: 30px;
+   
+    
+}
+ .btn:hover{
+    
+    color: black;
+    background-color: white;
+}
+.tile-text {
+    position: absolute;
+    z-index: 1;
+    letter-spacing: 2px;
+}
+.about-content2 {
+    position: relative;
+    cursor: pointer;
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.about-content {
+    position: relative;
+    cursor: pointer;
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lomp{
+    background-color: black;
+    height: 400px;
+    margin: 20px 0px;
+    width: 100%;
+}
+.mlak{
+    margin-top: 30px;
+}
+.mlak ul li{
+    list-style-type: none;
+
+
+}
+
+
+@media (mi) {
+    
+}

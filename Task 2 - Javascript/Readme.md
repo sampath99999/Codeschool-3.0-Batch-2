@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+
+=======
 # Task 2 - Javascript
 
 Using https://fakestoreapi.com, 
@@ -7,3 +10,4 @@ Using https://fakestoreapi.com,
 3. Responsive and if any data is missing from API keep it static
 
 ![image](https://github.com/sampath99999/Codeschool-3.0-Batch-2/assets/112122835/c9db326c-6eaf-4881-b954-221552cafb2c)
+>>>>>>> fc437c211998c878b8f856cac23669012d2822a1

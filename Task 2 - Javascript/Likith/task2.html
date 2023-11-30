@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      @media 
+      (min-device-width: 320px) and (max-device-width: 576px) {
+        .lot  {
+          visibility: hidden;
+        }
+        .lom {
+          visibility:visible;
+          float: left;
+        }
+        .table{
+          visibility:visible;
+
+        }
+       
+        .container{
+          display: inline;
+        }
+        .mad{
+          visibility:visible;
+
+        }
+        
+      
+      }
+      @media 
+      (min-device-width: 576px) and (max-device-width: 1900px) {
+        .virat{
+          visibility: hidden;
+        }
+        .div2{
+          visibility: hidden;
+        }
+        .lok{
+          visibility: hidden;
+
+        }
+       
+      }
+
+   
+     
+    </style>
+</head>
+<body>
+  <div class="lok border-light">
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="fa-solid fa-align-justify"></i></button>
+  <div class="lok">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel" >
+      <div class="offcanvas-header">
+        <h5 id="offcanvasTopLabel"></h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <p class="mb-0">
+          <div class="row d-flex "   style="width: 70px; ">
+              <div class="col-md-3 "  >
+                <h4>Conceals</h4>
+                <div class="mt-5 ">
+                  <div class="d-flex"><i class="fa-solid fa-house"></i>
+                  Overview
+                  </div>
+               
+                  <div class="d-flex"><i class="fa-solid fa-clipboard"></i>Management <i class="fa-solid fa-caret-down"></i></div>
+                <ul >
+                <li >Member</li>
+                <li >Product list</li>
+                <li >Partner list</li>
+                </ul>
+                <div class="d-flex"><i class="fa-solid fa-chart-simple"></i> Analytics</div>
+                  <div class="d-flex"><i class="fa-solid fa-file-invoice"></i>Accounting <i class="fa-solid fa-caret-down"></i></div>
+                    <div class="d-flex"><i class="fa-solid fa-copy"></i> Reports</div>
+              </div>
+                <br>
+                <br>
+                <div  style="height: 350px;">
+                  <div class="d-flex"><i class="fa-solid fa-gear"></i> Settings</div>
+                    <div class="d-flex"><i class="fa-regular fa-bell"></i> Notifications</div>
+                </div>
+              </div>
+              
+            </div>
+      </p>
+      </div>
+    </div>
+    </div>
+    </div>
+  
+
+  <div class="container  border">
+        <div class="row   "  >
+          <div class="col-md-3  " >
+
+            <h4>Conceals</h4>
+            <div class="lot" >
+            <div class="mt-5 border lot">
+            <p><i class="fa-solid fa-house"></i> Overview</p>
+            <p><i class="fa-solid fa-clipboard"></i>Management <i class="fa-solid fa-caret-down"></i></p>
+            <ul >
+            <li >Member</li>
+            <li >Product list</li>
+            <li >Partner list</li>
+            </ul>
+            <p><i class="fa-solid fa-chart-simple"></i> Analytics</p>
+            <p><i class="fa-solid fa-file-invoice"></i>Accounting <i class="fa-solid fa-caret-down"></i></p>
+            <p><i class="fa-solid fa-copy"></i> Reports</p>
+          </div>
+            <br>
+            <br>
+            <div class=" border lot" style="height: 350px;">
+            <p> <i class="fa-solid fa-gear"></i> Settings</p>
+            <p><i class="fa-regular fa-bell"></i> Notifications</p>
+
+
+
+            </div>
+            </div>
+
+          
+          </div>
+          <div class="col-md-9 lot mt-3 ">
+            <div class="row">
+              <div class="col-md-12 d-md-flex justify-content-between border">
+              
+                <div>
+                  
+                  <i class="fa-solid fa-magnifying-glass border" style="width: 60px;"></i>
+                </div>
+                <p class="lot"><b>6540</b> items</p>
+                
+                  <div class="form-check form-switch lot ">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                    <label class="form-check-label" for="flexSwitchCheckChecked">show statistic</label>
+                  </div>
+                 
+                  <button type="button" class="btn btn-outline lot "> <i class="fa-solid fa-list-check"></i> Filter</button>
+                  <button type="button" class="btn btn-outline lot"> <i class="fa-solid fa-bars-progress"></i> List</button>
+                 
+                  <button type="button" class="btn btn-outline lot"> <i class="fa-solid fa-download"></i> Export</button>
+                  <button type="button " class="lom" style="background-color: rgb(198, 131, 44);"><i class="fa-solid fa-plus"></i> New Product</button>
+
+              </div>
+              
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6 border shadow">
+                  <p>payment success</p>
+                  <h2>$412.450,<span style="color: rgb(209, 207, 204);">99</span></h2>
+                </div>
+                <div class="col-md-2 border shadow">
+                  <p>payment cancelled</p>
+                  <h3>894</h3>
+                </div>
+                <div class="col-md-2 border shadow">
+                  <p>Total Customer</p>
+                  <h3>2.850</h3>
+                </div>
+                <div class="col-md-2 border shadow">
+                  <p>Total Orders</p>
+                  <h3>10.650</h3>
+                </div>
+                
+              </div>
+             
+              <div class="row mt-3">
+                <div class="col-md-12 border">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                              <th>check</th>
+                              <th>Images</th>
+                                
+                                <th>
+                                    title
+                                </th>
+                                <th>price</th>
+                                
+                                <th>category</th>
+                                <th>Description</th>
+
+                                <th>Rating</th>
+                              
+                            </tr>
+        
+                        </thead>
+                        <tbody>
+        
+                        </tbody>
+        
+                    </table>
+                </div>
+                
+              </div>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                  <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+          </div>
+          
+        </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url: "http://fakestoreapi.com/products",  //your api link here
+            type :"GET",
+            cache  :false,
+            success: function(result) {
+                var tbodyData="";
+                $.each(result ,function(key,value){
+                    tbodyData += "<tr>";
+                      tbodyData +='<td><input type="checkbox" name="" id="'+ value.id+'" ></td>';
+                      tbodyData +='<td><img style="width:70px;height:auto;" src="'+ value.image+'" alt="product image"></td>';
+                      tbodyData +='<td>'+ value['title']+'</td>';
+                      tbodyData +='<td>'+ value['price']+'</td>';
+                      tbodyData +='<td>'+ value['category']+'</td>';
+                      tbodyData +='<td>'+ value['description']+'</td>';
+
+                      tbodyData +='<td>'+ value.rating.rate+'</td>';
+                      tbodyData +='<td><i class="fa-solid fa-ellipsis-vertical"></i></td>';
+                      
+                      
+                      
+                        tbodyData += "</tr>";
+                     });
+                     $('tbody').html(tbodyData);
+
+                   
+
+            }
+        }
+        );
+    })
+   
+
+</script>
+    
+</body>
+</html>

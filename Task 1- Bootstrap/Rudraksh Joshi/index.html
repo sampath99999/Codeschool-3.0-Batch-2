@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    body {
+      position: relative;
+    }
+    .navigate {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      z-index: 1;
+    }
+  </style>
+  <body>
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark navigate">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-5 fs-1 fw-bold" href="#">Chris</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">Styles</a>
+            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href="#">Single Post</a>
+            <a class="nav-link" href="#">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- card header section overlay -->
+    <div class="card bg-dark text-white" style="margin-bottom: 20rem">
+      <img
+        src="./main-banner.jpg"
+        class="banner-img"
+        alt="Bg-image"
+        style="height: 800px; object-fit: cover"
+      />
+      <div class="card-img-overlay offset-md-2 mt-5" style="overflow-y: hidden">
+        <div
+          class="col-2 py-2 text-center mb-4"
+          style="background-color: #444444; letter-spacing: 3px; width: 125px"
+        >
+          Hi! Everyone
+        </div>
+        <div class="display-1 fw-bold">Chris Lee</div>
+        <div class="display-1 fw-bold">Brand Designer</div>
+        <div style="color: #b0b0b0" class="my-4">
+          Make designs mainly logos, visual identities, apps & <br />websites,
+          social media and magazines.
+        </div>
+        <a
+          href="#"
+          class="btn text-white text-uppercase fw-bold fs-6 border-light px-4"
+          >Get in touch</a
+        >
+      </div>
+    </div>
+
+    <!-- About title container -->
+    <div class="container mb-2 ps-5">
+      <div
+        class="col-1 about-title position-relative"
+        style="color: #f1f1f1; font-size: 100px"
+      >
+        About
+        <div
+          class="position-absolute fs-5 bg-light"
+          style="top: 70px; left: 100px; color: #b0b0b0; width: 100px"
+        >
+          Who Am I
+        </div>
+      </div>
+    </div>
+
+    <!-- About container -->
+
+    <div class="container d-flex ps-5 mb-5 flex-sm-row flex-column gap-sm-5">
+      <!-- About content container -->
+      <div class="container ps-3">
+        <div
+          class="col"
+          style="color: #b0b0b0; font-family: Manrope, sans-serif"
+        >
+          <div class="col lh-lg mb-1">
+            I’m Chris Lee, a front-end web developer and Web Page Designer
+            <br />
+            based in New York, USA. I've been working for the last 10 years.
+            <br />
+            <br />
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            <br />
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            <br />
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            <br />
+            aliquip ex ea commodo consequat
+          </div>
+        </div>
+        <button class="btn btn-dark fw-bold mt-5 mb-4 py-2 px-4">
+          About Me
+        </button>
+      </div>
+
+      <!-- Progress Bar Container -->
+      <div class="container">
+        <div class="text-uppercase mb-3 skill">PhotoShop</div>
+        <div class="progress mb-4" style="height: 3px">
+          <div
+            class="progress-bar bg-dark"
+            role="progressbar"
+            style="width: 75%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+
+        <div class="text-uppercase mb-3 skill">Illustrator</div>
+        <div class="progress mb-4" style="height: 2px">
+          <div
+            class="progress-bar bg-dark"
+            role="progressbar"
+            style="width: 25%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+
+        <div class="text-uppercase mb-3 skill">Figma</div>
+        <div class="progress mb-4" style="height: 3px">
+          <div
+            class="progress-bar bg-dark"
+            role="progressbar"
+            style="width: 50%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+
+        <div class="text-uppercase mb-3 skill">After Effect</div>
+        <div class="progress mb-4" style="height: 3px">
+          <div
+            class="progress-bar bg-dark"
+            role="progressbar"
+            style="width: 15%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+
+        <div class="text-uppercase mb-3 skill">InDesign</div>
+        <div class="progress" style="height: 2px">
+          <div
+            class="progress-bar bg-dark"
+            role="progressbar"
+            style="width: 34%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio title container -->
+    <div class="container text-center pt-5 mb-5">
+      <div
+        class="col about-title position-relative"
+        style="color: #f1f1f1; font-size: 100px"
+      >
+        Portfolio
+        <div
+          class="position-absolute fs-6 pb-2 bg-light"
+          style="top: 40%; left: 44%; color: #b0b0b0; letter-spacing: 2px"
+        >
+          Latest Works
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio work -->
+    <div class="container mb-5">
+      <div class="row d-flex">
+        <div class="col">
+          <img class="img-fluid" src="portfolio1.jpg" alt="" />
+          <div class="text-end fs-5 pt-3 me-5">Magazine Front Design</div>
+        </div>
+        <div class="col">
+          <img class="img-fluid" src="portfolio3.jpg" alt="" />
+          <div class="text-end fs-5 pt-3 me-5">Coffee bottle mockup</div>
+        </div>
+      </div>
+      <div class="row d-flex">
+        <div class="col mt-5">
+          <img class="img-fluid" src="portfolio2.jpg" alt="" />
+          <div class="text-end fs-5 pt-3 me-5">Product Bottle Design</div>
+        </div>
+        <div class="col" style="margin-top: -200px">
+          <img class="img-fluid" src="portfolio5.jpg" alt="" />
+          <div class="text-end fs-5 pt-3 me-5">Product Tag Mockup</div>
+        </div>
+      </div>
+      <div class="row d-flex">
+        <div class="col mt-5">
+          <img class="img-fluid" src="portfolio4.jpg" alt="" />
+          <div class="text-end fs-5 pt-3 me-5">Magazine & Product Mockup</div>
+        </div>
+        <div class="col" style="margin-top: -65px">
+          <img class="img-fluid" src="portfolio6.jpg" alt="" />
+          <div class="text-end fs-5 pt-3 me-5">Perfume Brand Identity</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote of the day container -->
+
+    <div class="container-fluid my-5" style="background-color: black">
+      <div class="container" style="padding-top: 150px; padding-bottom: 150px">
+        <h1 class="text-center text-white pb-5" style="font-size: 100px">
+          Quote Of The Day
+        </h1>
+        <p class="text-center text-white pb-5 mt-5" style="font-size: 26px">
+          Success is not final; failure is not fatal: it is the courage <br />to
+          continue that counts.
+        </p>
+        <p class="text-center text-white pb-5">"-Winston Churchill"</p>
+      </div>
+    </div>
+
+    <!-- Achievement title container  -->
+
+    <div class="container text-center pt-5 mb-5">
+      <div
+        class="col about-title position-relative display-1"
+        style="color: #f1f1f1"
+      >
+        Achievement
+        <div
+          class="position-absolute fs-6 pb-2 bg-light"
+          style="top: 40%; left: 44%; color: #b0b0b0; letter-spacing: 2px"
+        >
+          Awards and Recognition
+        </div>
+      </div>
+    </div>
+
+    <!-- Achievements -->
+    <div class="container my-5">
+      <div class="row">
+        <div class="col my-5 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+          <h4 class="text-dark mb-3 fw-bold">Interior Design</h4>
+          <h6 class="text-secondary mb-5">
+            Breakthrough designer of the year 2020
+          </h6>
+          <hr />
+        </div>
+        <div class="col my-5 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+          <h4 class="text-dark mb-3 fw-bold">Interior Design</h4>
+          <h6 class="text-secondary mb-5">
+            Breakthrough designer of the year 2020
+          </h6>
+          <hr />
+        </div>
+        <div class="col my-5 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+          <h4 class="text-dark mb-3 fw-bold">Interior Design</h4>
+          <h6 class="text-secondary mb-5">
+            Breakthrough designer of the year 2020
+          </h6>
+          <hr />
+        </div>
+        <div class="col my-5 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+          <h4 class="text-dark mb-3 fw-bold">Interior Design</h4>
+          <h6 class="text-secondary mb-5">
+            Breakthrough designer of the year 2020
+          </h6>
+          <hr />
+        </div>
+        <div class="col my-5 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+          <h4 class="text-dark mb-3 fw-bold">Interior Design</h4>
+          <h6 class="text-secondary mb-5">
+            Breakthrough designer of the year 2020
+          </h6>
+          <hr />
+        </div>
+        <div class="col my-5 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+          <h4 class="text-dark mb-3 fw-bold">Interior Design</h4>
+          <h6 class="text-secondary mb-5">
+            Breakthrough designer of the year 2020
+          </h6>
+          <hr />
+        </div>
+      </div>
+    </div>
+
+    <!-- Blogs title container -->
+    <div class="container" style="margin-bottom: 120px">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card my-5">
+            <img src="./postimg1.jpg" class="card-img-top" alt="" />
+            <div
+              class="card-img-overlay d-flex align-items-end justify-content-center"
+              style="
+                background: linear-gradient(
+                  to top,
+                  rgb(56, 56, 56),
+                  rgba(0, 0, 0, 0)
+                );
+                width: 100%;
+                height: 100%;
+              "
+            >
+              <span class="card-title" style="color: white"
+                >Graphic Design 2021 / July 1, 2021 <br /><br />
+                <span class="fs-4 fw-bold"
+                  >Graphic Designing Useful <br />
+                  Tips & Best practices
+                </span></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card my-5">
+            <img src="./postimg2.jpg" class="card-img-top" alt="" />
+            <div
+              class="card-img-overlay d-flex align-items-end justify-content-center"
+              style="
+                background: linear-gradient(
+                  to top,
+                  rgb(56, 56, 56),
+                  rgba(0, 0, 0, 0)
+                );
+                width: 100%;
+                height: 100%;
+              "
+            >
+              <span class="card-title" style="color: white"
+                >Graphic Design 2021 / July 1, 2021 <br /><br />
+                <span class="fs-4 fw-bold"
+                  >Graphic Designing Useful <br />
+                  Tips & Best practices
+                </span></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card my-5">
+            <img src="./postimg3.jpg" class="card-img-top" alt="" />
+            <div
+              class="card-img-overlay d-flex align-items-end justify-content-center"
+              style="
+                background: linear-gradient(
+                  to top,
+                  rgb(56, 56, 56),
+                  rgba(0, 0, 0, 0)
+                );
+                width: 100%;
+                height: 100%;
+              "
+            >
+              <span class="card-title" style="color: white"
+                >Graphic Design 2021 / July 1, 2021 <br /><br />
+                <span class="fs-4 fw-bold"
+                  >Graphic Designing Useful <br />
+                  Tips & Best practices
+                </span></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+
+    <div
+      class="container-fluid"
+      style="background-image: url('./review-bg.jpg')"
+      ;
+    >
+      <div class="row">
+        <div class="container text-center pt-5 mb-5">
+          <div
+            class="col position-relative display-1"
+            style="color: rgb(71, 69, 69)"
+          >
+            Testimonials
+            <div
+              class="position-absolute fs-6 pb-2 text-white px-2"
+              style="
+                top: 42%;
+                left: 44%;
+                background-color: black;
+
+                letter-spacing: 2px;
+                z-index: 1;
+              "
+            >
+              What Client Says
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-12 p-5 fs-3 text-white text-center"
+          style="height: 340px"
+        >
+          <span>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br />
+            Minima dolore incidunt delectus quos cumque rem <br />
+            amet maxime.
+          </span>
+        </div>
+        <div class="col" style="height: 300px">
+          <img
+            src="./reviewer.png"
+            class="img-fluid"
+            style="margin-left: 45%"
+            alt=""
+          />
+          <div class="text-white" style="margin-left: 45%; margin-top: 10px">
+            <span class="ms-3">Jenny</span> <br />
+            <span class="" style="margin-left: -20px">General Manager</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer  -->
+    <div class="container" style="margin-top: 200px">
+      <div class="row" style="margin-top: 100px">
+        <div class="col-lg-4 col-12">
+          <div class="fs-1 fw-bold">Chris</div>
+          <div class="mt-5">
+            Subscribe to newsletter to get some updates related with branding,
+            designs and more.
+          </div>
+          <button class="btn btn-light col-8 text-dark mt-5 mb-4">
+            Write Your Email Address
+          </button>
+          <button class="btn btn-dark col-8">SUBSCRIBE</button>
+        </div>
+        <div class="col-lg-4 col-12">
+          <div class="d-flex gap-5">
+            <ul
+              style="
+                list-style-type: none;
+                margin-top: 40px;
+                line-height: 50px;
+                color: rgb(112, 109, 109);
+              "
+            >
+              <li>Home</li>
+              <li>About</li>
+              <li>Portfolio</li>
+              <li>Services</li>
+            </ul>
+            <ul
+              style="
+                list-style-type: none;
+                margin-top: 40px;
+                line-height: 50px;
+                color: rgb(112, 109, 109);
+              "
+            >
+              <li>Home</li>
+              <li>About</li>
+              <li>Portfolio</li>
+              <li>Services</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12">
+          <div class="mt-5">
+            Just feel free to contact if you wanna collaborate with me, or
+            simply have a conversation
+          </div>
+          <div class="h3 mt-5">Creatify@gmail.com</div>
+          <hr class="w-50" style="height: 2px" />
+        </div>
+      </div>
+    </div>
+    <!-- socials -->
+    <footer
+      style="
+        background-color: black;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-top: 100px;
+      "
+    >
+      <div class="footer-row d-md-flex container">
+        <div class="col d-flex social-links">
+          <ul class="d-flex" style="list-style: none">
+            <li style="color: white"><i class="bi bi-facebook pe-3"></i></li>
+            <li style="color: white"><i class="bi bi-twitter pe-3"></i></li>
+            <li style="color: white"><i class="bi bi-instagram pe-3"></i></li>
+            <li style="color: white"><i class="bi bi-youtube pe-3"></i></li>
+            <li style="color: white"><i class="bi bi-pinterest pe-3"></i></li>
+          </ul>
+        </div>
+        <div class="col d-flex">
+          <p class="ms-md-auto" style="color: lightgray">
+            Free HTML by TemplatesJungle
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!--  -->
+    <div
+      style="
+        position: fixed;
+        bottom: 10px;
+        right: 0px;
+        display: flex;
+        gap: 20px;
+      "
+    >
+      <div class="icon-cart"><i class="bi bi-cart"></i></div>
+      <div class="icon-cart" style="background: orange">
+        <i class="bi bi-cart"></i>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
