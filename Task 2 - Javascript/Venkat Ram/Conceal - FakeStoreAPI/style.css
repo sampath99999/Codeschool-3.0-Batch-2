@@ -1,0 +1,173 @@
+html,
+body {
+    font-family: 'Cabin';
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    font-size: 15px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+input[type=checkbox] {
+    margin-top: 50%;
+    accent-color: black;
+}
+
+#sidebar {
+    max-width: 195px;
+    min-width: 195px;
+    transition: all 0.3s ease-in-out;
+}
+
+#sidebar.hidden {
+    margin-left: -195px;
+}
+
+.c-sidebar-link>i, div {
+    color: #909090;
+}
+
+.c-sidebar-link :hover {
+    color: black;
+}
+
+.c-sidebar-dropdown>li>a>span {
+    color: #909090;
+}
+
+.c-sidebar-dropdown :hover {
+    color: black;
+}
+
+.c-sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    color: #767676;
+    border-width: 0 .1rem .1rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 0.92rem;
+    top: 0.92rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+.c-sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+}
+
+.notification {
+    margin-top: -0.25em;
+    background-color: #FEF3EA;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    text-align: center;
+    float: right;
+    font-size: 10px;
+    color: black;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.flexbasis-70 {
+    flex-basis: 70%;
+}
+
+.flexbasis-100 {
+    flex-basis: 100%;
+}
+
+.vr {
+    border-left: 1px solid black;
+    height: 50px;
+}
+
+.form-switch .form-check-input {
+    height: 24px;
+    width: 48px;
+}
+
+.form-switch .form-check-input:focus {
+    border-color: rgba(85, 85, 85, 0.25);
+    outline: 0;
+    box-shadow: 0 0 0 0 rgba(113, 113, 113, 0);
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(0,0,0,0.25)'/></svg>");
+}
+
+.form-switch .form-check-input:checked {
+    background-color: rgb(65, 65, 65);
+    border-color: rgb(57, 57, 57);
+    border: none;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(255,255,255,1.0)'/></svg>");
+}
+
+.hide {
+    display: none;
+}
+
+.second-button {
+    display: none;
+}
+
+.final-button {
+    flex-basis: 100%;
+    /* justify-content: end; */
+}
+
+.small-stat-red {
+    font-size: x-small;
+    border: 0.5px solid #FEF5F5;
+    background-color: #FEF5F5;
+    color: red;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.small-stat-green {
+    font-size: x-small;
+    border: 0.5px solid #F2FBF8;
+    background-color: #F2FBF8;
+    color: #4CC095;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.pagination>li>a {
+    box-shadow: none;
+    outline: none;
+    border: none;
+    background-color: #f8f9f5;
+    color: black;
+    outline: none;
+    border: none;
+    margin: 15px;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.pagination>li>a:hover {
+    background-color: black;
+    color: white;
+}
+
+.pagination>li>a:active {
+    box-shadow: none;
+    outline: none;
+    border: none;
+}

@@ -1,0 +1,181 @@
+.home {
+    background-image: url("https://demo.templatesjungle.com/chris/images/main-banner.jpg");
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+}
+
+.container {
+    padding: 50px;
+}
+
+.hi {
+    position: absolute;
+    background-color: grey;
+    padding: 5px;
+    top: 10%;
+    border: 2px solid white;
+}
+
+.home-content {
+    display: inline-block;
+    padding: 50px;
+    border-radius: 5px;
+    margin: 0px;
+}
+
+.home-content h1 {
+    font-size: 70px;
+    margin: 0;
+    color: white;
+    font-weight: 100px;
+}
+
+.home-content p {
+    font-size: 18px;
+    color: grey;
+    padding: auto;
+}
+
+.home-content a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.home-content a:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/*.......*/
+
+.about-content {
+    color: #666;
+    /* Grey text color */
+    font-size: 16px;
+    padding: 20px;
+}
+
+.btn-primary {
+    background-color: #000;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+    transition: background-color 0.3s;
+    color: white;
+}
+
+
+/*quote*/
+
+.background-image {
+    background-image: url("quoteimg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.quote-content {
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+h1 {
+    font-size: 70px;
+    margin: 0;
+}
+
+p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.main-img {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*ach*/
+
+#achievement {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.section-header {
+    color: grey;
+    font-size: 70px;
+    font-weight: 50px;
+    letter-spacing: 10px;
+}
+
+.achievement-block {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.col-md-4 {
+    width: 33.33%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+/*blogs*/
+
+.container1 {
+    color: grey;
+    display: flex;
+    font-size: 70px;
+    font-weight: 50px;
+    letter-spacing: 10px;
+    padding-left: 600px;
+}
+
+.blog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.blog1 {
+    position: absolute;
+    color: white;
+    padding-left: 20px;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+
+/*footer*/
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+@media(min-width:641px) and(max-width:1280px) {
+    .home {
+        background-size: 100% auto;
+    }
+}

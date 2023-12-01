@@ -1,0 +1,73 @@
+@media (max-width: 616px) {
+    #Profile h1 {
+        font-size: 32px;
+    }
+}
+
+.aboutus {
+    margin: 150px;
+}
+
+.aboutus h1 {
+    font-size: 100px;
+    letter-spacing: 3px;
+}
+
+.aboutus .Over_lay_tex {
+    font-size: 16px;
+    margin-left: 75px;
+    margin-top: 45px;
+    position: absolute;
+}
+
+.portfolio h1 {
+    font-size: 100px;
+}
+
+.Over_lay_tex_portfolio {
+    font-size: 16px;
+    margin-top: 55px;
+    position: absolute;
+}
+
+.Achievement h1 {
+    margin-top: 100px;
+    font-size: 75px;
+}
+
+.Over_lay_tex_achievement {
+    font-size: 16px;
+    margin-top: 145px;
+    position: absolute;
+}
+
+.Blog h1 {
+    margin-top: 100px;
+    font-size: 100px;
+}
+
+.Over_lay_tex_blog {
+    font-size: 16px;
+    margin-top: 145px;
+    position: absolute;
+}
+
+.Testimonial h1 {
+    margin-top: 100px;
+    font-size: 100px;
+}
+
+.Over_lay_tex_testimonial {
+    font-size: 16px;
+    margin-top: 155px;
+    position: absolute;
+}
+
+.litems {
+    color: #B0B0B0;
+    margin-top: 15px;
+}
+
+.footer_temp {
+    margin-top: -45px;
+}

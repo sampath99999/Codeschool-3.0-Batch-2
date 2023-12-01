@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live-Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        #first-page-bg-img{
+            background-image: url('https://demo.templatesjungle.com/chris/images/main-banner.jpg');
+            height: auto;
+            width: 100vw;
+            background-size: cover;           
+        }
+        #button{
+            color: white;
+            border-radius: 0%;
+        }
+        #button:hover{
+            background-color: white;
+            color: black;
+        }
+       #progress{
+        height: 2px;
+       }
+       
+    </style>
+</head>
+<body>
+    <div class="container-fluid text-white mb-5 lg sm md" id="first-page-bg-img">
+        <div class="container-fluid px-4 py-4">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-none ">
+                <div class="container-fluid ">
+                  <a class="navbar-brand fw-bold fs-2" href="#">Chris</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto   mb-2 mb-lg-0 ">
+                      <li class="nav-item ">
+                        <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Styles</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Blogs</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Single Post</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Contact Us</a>
+                      </li>
+                    </ul>                  
+                 </div>
+            </nav>
+        </div>
+        
+        <div class=" offset-md-2 mb-5"><span class="py-1 px-2" style="width:auto; height: auto; background-color: rgba(128, 128, 128, 0.509);font-size: 18px;">Hi! Everyone</span></div>
+        <h1 class="fw-bold offset-md-2 mb-5" style="font-size: 70px;">Chris Lee<br>Brand Designer</h1>
+        <p class="offset-md-2 mb-5">Make designs mainly logos, visuals<br>identities, apps & websites, social media,<br> magazines.</p>
+        <button class="btn bg-none border-light br-none offset-md-2 mb-5 fw-bold" id="button">GET IN TOUCH</button>
+    </div>
+  
+    <section class="margin-large my-5" >
+      <div class="container" >
+          <div class="row" style="display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right: -15px;margin-left: -15px;">
+              <div class="section-header" style="position: relative; border: 1px solid #ffffff;background: #fff;letter-spacing: 2px;text-transform: capitalize">
+                  <div class="title" style="position: absolute;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center" ><span style="background: white;color: grey;">who am i</span></div>
+                  <h2 class="section-title text-center " style="font-family: var(--body-font);font-size: 4em;line-height: 1;font-weight: 400;color:rgba(128, 128, 128, 0.298);">About</h2>
+              </div>
+          </div>
+      </div>      
+    </section>
+    
+        <div class="container">
+            <div class="row">
+                <div class="col mt-5 col-xxl-6 col-xl-6 col-lg-6 col-md-7 col-sm-12 col-12">
+                    <p class="text-secondary lh-lg fs-6 mb-5 ">I'm Chris Lee, a front-end web developer and Web Page Designer based in New York, USA. I've been working for the last 10 years.<br> <br>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      <button class="btn bg-black  text-white fw-bold" id="button">ABOUT ME</button>
+                </div>
+
+                <div class="col mt-5 col-xxl-6 col-xl-6 col-lg-6 col-md-5 col-sm-12 col-12">
+                    <div class="row ms-auto mb-5">
+                        <h6 class="mb-4 text-secondary">PHOTOSHOP</h6>
+                        <div class="progress" id="progress">
+                            <div class="progress-bar  bg-dark" role="progressbar" aria-valuenow="40"
+                            aria-valuemin="0" aria-valuemax="100" style="width:80%">                              
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row ms-auto mb-5">
+                        <h6 class="mb-4 text-secondary">ILLUSTRATOR</h6>
+                        <div class="progress" id="progress">
+                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="40"
+                            aria-valuemin="0" aria-valuemax="100" style="width:30%">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row ms-auto mb-5">
+                      <h6 class="mb-4 text-secondary">FIGMA</h6>
+                      <div class="progress" id="progress">
+                          <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="40"
+                          aria-valuemin="0" aria-valuemax="100" style="width:60%">
+                          </div>
+                      </div>
+                    </div>
+
+                  <div class="row ms-auto mb-5">
+                    <h6 class="mb-4 text-secondary">AFTER EFFECT</h6>
+                    <div class="progress" id="progress">
+                        <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="40"
+                        aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                        </div>
+                    </div>
+                  </div>
+
+                <div class="row ms-auto mb-5">
+                  <h6 class="mb-4 text-secondary">IN DESIGN</h6>
+                  <div class="progress" id="progress">
+                      <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="40"
+                      aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                      </div>
+                  </div>
+                </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <section class="margin-large my-5" >
+          <div class="container">
+              <div class="row" style="display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right: -15px;margin-left: -15px;">
+                  <div class="section-header" style="position: relative; border: 1px solid #ffffff;background: #fff;letter-spacing: 2px;text-transform: capitalize">
+                      <div class="title" style="position: absolute;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center" ><span style="background: white;color: grey;">Latest Works</span></div>
+                      <h2 class="section-title text-center" style="font-family: var(--body-font);font-size: 4em;line-height: 1;font-weight: 400;color:rgba(128, 128, 128, 0.298);">Portfolio</h2>
+                  </div>
+              </div>
+          </div>      
+        </section>
+
+        <div class="container-fluid my-5">
+          <div class="row">
+            <div class="col col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-4">
+              <img src="C:\Users\Hyder\OneDrive\Desktop\task-2\portfolio1.jpg" style="width:100%; height: 150vh;">
+              <h4 class="text-end mt-3">Magazine Front Size</h4>
+            </div>
+            <div class="col col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-4">
+              <img src="C:\Users\Hyder\OneDrive\Desktop\task-2\portfolio3.jpg" style="width:100%; height: 100vh;">
+              <h4 class="text-end mt-3">Coffee Bottle Mockup</h4>
+            </div>
+          </div>
+
+        
+          <div class="row">
+            <div class="col col-xxl-4 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-4">
+              <img src="C:\Users\Hyder\OneDrive\Desktop\task-2\portfolio2.jpg" style="width:100%; height: 100vh;">
+              <h4 class="text-end mt-3">Product Bottle Design</h4>
+            </div>
+            <div class="col col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-4 ">
+              <img src="C:\Users\Hyder\OneDrive\Desktop\task-2\portfolio5.jpg" style="width:100%; height:150vh;">
+              <h4 class="text-end mt-3">Product tag mockup</h4>
+            </div>
+          </div>
+        
+
+        
+          <div class="row">
+            <div class="col col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-4">
+              <img src="C:\Users\Hyder\OneDrive\Desktop\task-2\portfolio4.jpg" style="width:100%; height: 100vh;">
+              <h4 class="text-end mt-3">Magazine and brochure mockup</h4>
+            </div>
+            <div class="col col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-4">
+              <img src="C:\Users\Hyder\OneDrive\Desktop\task-2\portfolio6.jpg" style="width:100%; height:150vh;">
+              <h4 class="text-end mt-3">Perfume brand identity</h4>
+            </div>
+          </div>
+        </div>
+        
+      <div class="container-fluid bg-black my-5" >
+        <div class="container" style="padding-top: 150px; padding-bottom: 150px;">
+          <h1 class="text-center text-white pb-5"  style="font-size: 70px;">Quote Of The Day</h1>
+          <p class="text-center text-white pb-5 "  style="font-size: 26px;">Success is not final; failure is not fatal: it is the courage <br>to continue that counts.</p>
+          <p class="text-center text-white pb-5">"-Winston Churchill"</p>
+        </div>
+      </div>
+           
+      <section  class="margin-large my-5" >
+        <div class="container">
+            <div class="row" style="display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right: -15px;margin-left: -15px;">
+                <div class="section-header" style="position: relative; border: 1px solid #ffffff;background: #fff;letter-spacing: 2px;text-transform: capitalize">
+                    <div class="title" style="position: absolute;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center" ><span style="background: white;color: grey;">Awards And Recognition</span></div>
+                    <h2 class="section-title text-center" style="font-family: var(--body-font);font-size: 4em;line-height: 1;font-weight: 400;color:rgba(128, 128, 128, 0.298);">Achievement</h2>
+                </div>
+            </div>
+        </div>      
+      </section>
+        
+
+      <div class="container my-5">
+        <div class="row">
+          <div class="col my-5 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+            <h4 class="text-dark mb-3 fw-bold">Interior Design</h4>
+            <h6 class="text-secondary mb-5">Breakthrough designer of the year 2020</h6>           
+            <hr>
+          </div>
+          <div class="col my-5 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+            <h4 class="text-dark mb-3 fw-bold">Interior Design</h4>
+            <h6 class="text-secondary mb-5">Breakthrough designer of the year 2020</h6>           
+            <hr>
+          </div>
+          <div class="col my-5 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+            <h4 class="text-dark mb-3 fw-bold">Interior Design</h4>
+            <h6 class="text-secondary mb-5">Breakthrough designer of the year 2020</h6>           
+            <hr>
+          </div>
+          <div class="col my-5 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+            <h4 class="text-dark mb-3 fw-bold">Interior Design</h4>
+            <h6 class="text-secondary mb-5">Breakthrough designer of the year 2020</h6>           
+            <hr>
+          </div>
+          <div class="col my-5 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+            <h4 class="text-dark mb-3 fw-bold">Interior Design</h4>
+            <h6 class="text-secondary mb-5">Breakthrough designer of the year 2020</h6>           
+            <hr>
+          </div>
+          <div class="col my-5 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+            <h4 class="text-dark mb-3 fw-bold">Interior Design</h4>
+            <h6 class="text-secondary mb-5">Breakthrough designer of the year 2020</h6>           
+            <hr>
+          </div>
+        </div>
+      </div>
+
+      <section class="margin-large my-5" >
+        <div class="container">
+            <div class="row" style="display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right: -15px;margin-left: -15px;">
+                <div class="section-header" style="position: relative; border: 1px solid #ffffff;background: #fff;letter-spacing: 2px;text-transform: capitalize">
+                    <div class="title" style="position: absolute;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center" ><span style="background: white;color: grey;">Latest News</span></div>
+                    <h2 class="section-title text-center" style="font-family: var(--body-font);font-size: 4em;line-height: 1;font-weight: 400;color:rgba(128, 128, 128, 0.298);">Blogs</h2>
+                </div>
+            </div>
+        </div>      
+      </section>
+
+      
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+            <div class="card shadow p-3 mb-5 bg-white rounded border-light" style="background-image: url(https://demo.templatesjungle.com/chris/images/postimg1.jpg);" >        
+              <div class="card-body">
+                <h6 class="text-white" style="margin-top: 250px;">Graphics Designs 2021/ July 1, 2021</h6>
+                <h5 class="text-white fw-bold">Graphic Designing Useful Tools And Best Practices</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+            <div class="card shadow p-3 mb-5 bg-white rounded border-light" style="background-image: url(https://demo.templatesjungle.com/chris/images/postimg2.jpg);" >        
+              <div class="card-body">
+                <h6 class="text-white" style="margin-top: 250px;">Graphics Designs 2021/ July 1, 2021</h6>
+                <h5 class="text-white fw-bold">Basic Typography Rules For Ui Designing</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+            <div class="card shadow p-3 mb-5 bg-white rounded border-light" style="background-image: url(https://demo.templatesjungle.com/chris/images/postimg3.jpg);" >        
+              <div class="card-body">
+                <h6 class="text-white" style="margin-top: 250px;">Graphics Designs 2021/ July 1, 2021</h6>
+                <h5 class="text-white fw-bold">Top 10 Graphic Designs Review in 2021</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid my-5" id="first-page-bg-img" style="background-image: url(https://demo.templatesjungle.com/chris/images/review-bg.jpg);">
+        <section class="margin-large my-5" >
+          <div class="container ">
+              <div class="row" style="display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right: -15px;margin-left: -15px;">
+                  <div class="section-header" style="position: relative;background: none;letter-spacing: 2px;text-transform: capitalize">
+                      <div class="title" style="position: absolute;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center" ><span style="background:black;color: white;">What Clients Say</span></div>
+                      <h2 class="section-title text-center " style="font-size: 4em;line-height: 1;background: none; font-weight: 400;color:rgba(128, 128, 128, 0.298);">Testimonials</h2>
+                  </div>
+              </div>
+          </div>      
+        </section>
+        <p class="text-center text-white pt-5" style="font-size: 25px;">Loren ipsum dolor sit amet, elit consectetur adipiscing. <br>Odio tincidunt et, massa, turpis nec dolor posuere tempus. Nulla congue <br> et dolor sit amet. elit consectetur adipiscing.</p>
+        <img src="C:\Users\Hyder\OneDrive\Desktop\task-2\reviewer.png" style="margin-left: 47%;" class="py-5" >
+        <h5 class="text-white text-center">Lucas Wolfer</h5>
+        <h6 class="text-secondary text-center pb-5">Ceo-Raisins</h6>
+      </div>
+ 
+      
+      <div class="container my-5">
+        <div class="row">
+
+          <div class="col-xxl-4 col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 my-5">
+            <h1>Chris</h1>
+            <p class="my-5">Subscribe to newsletter to get some updates related with branding, designs and more.</p>
+            <div class="mb-5"><input type="text" class="text-center" style="width: 100%; height: 50px; letter-spacing: 1px;" placeholder="Write Your Email Address"></div>
+            <div><button type="btn" style="width: 100%; height: 50px;" class="bg-black text-white fw-bold">SUBSCRIBE</button></div>
+          </div>
+
+          <div class="col-xxl-2 col-xl-2  col-lg-6 col-md-6 col-sm-6 col-6 my-5">
+            <ul class="list-unstyled px-2 text-secondary">
+              <li class="nav-item mb-4">
+                <a class="nav-link"  href="#">Home</a>
+              </li>
+              <li class="nav-item mb-4">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item mb-4">
+                <a class="nav-link" href="#">Portfolio</a>
+              </li>
+              <li class="nav-item mb-4">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-xxl-2 col-xl-2 col-lg-6 col-md-6 col-sm-6 col-6 my-5">
+            <ul class="list-unstyled px-2 text-secondary">
+              <li class="nav-item mb-4">
+                <a class="nav-link"  href="#">Home</a>
+              </li>
+              <li class="nav-item mb-4">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item mb-4">
+                <a class="nav-link" href="#">Portfolio</a>
+              </li>
+              <li class="nav-item mb-4">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-xxl-4 col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 my-5">
+            <p>Just feel free to contact if you wanna collaborate with me, or simply have a conversation.</p>
+            <h2>Creatify@gmail.com</h2>
+            <hr>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container-fluid bg-black my-5">
+        <div class="row">
+          <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
+            <ul class="list-group list-group-horizontal list-unstyled justify-content-start py-5">
+                <li class="ms-5">
+                    <a href="#"><h5><i class="bi bi-facebook text-secondary"></i></h5></a>
+                </li>
+                <li class="ms-3">
+                    <a href="#"><h5><i class="bi bi-twitter text-secondary"></i></h5></a>
+                </li>
+                <li class="ms-3">
+                    <a href="#"><h5><i class="bi bi-behance text-secondary"></i></h5></a>
+                </li>
+                <li class="ms-3">
+                    <a href="#"><h5><i class="bi bi-youtube text-secondary"></i></h5></a>
+                </li>
+                <li class="ms-3">
+                    <a href="#"><h5><i class="bi bi-pinterest text-secondary"></i></h5></a>
+                </li>
+            </ul>
+          </div>
+
+          <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+            <h5 class="text-secondary text-end py-5">Free HTML by <span class="text-white">TemplatesJungle</span></h5>
+          </div>
+        </div>
+      </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>

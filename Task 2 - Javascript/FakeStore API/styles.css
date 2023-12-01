@@ -1,0 +1,38 @@
+body {
+    background: #eee;
+  }
+  
+  #side_nav {
+    background: gainsboro;
+    min-width: 200px;
+    max-width: 200px;
+    transition: all 0.3s;
+  }
+
+  .content {
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  .sidebar li.active {
+    background: gray;
+    border-radius: 8px;
+  }
+
+  .sidebar li a {
+    color: black;
+  }
+
+  @media (max-width: 767px) {
+    #side_nav {
+      margin-left: -250px;
+      position: absolute;
+      min-height: 100vh;
+      z-index: 1;
+    }
+
+    #side_nav.active {
+      margin-left: 0;
+    }
+    
+  }

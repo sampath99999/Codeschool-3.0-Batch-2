@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">
+    
+</head>
+
+<style>
+    body,
+    html {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
+<body>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg bg-light py-4 px-3">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-3" href="http://localhost/CodeSchool/Task4/index.html">Online Store</a>
+            <div class="px-1 ms-auto">
+                <span class="fs-5" style="vertical-align: middle;">Hey, <span class="fw-bold" id="greeting"></span></span>
+                <button class="btn btn-secondary ms-5 py-2 px-3 text-white" data-bs-toggle="modal" data-bs-target="#addProductModal">Add New Products</button>
+                <button class="btn btn-secondary ms-5 py-2 px-3 text-white" onclick="signout()">Sign Out</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Body -->
+
+    <div class="row m-5" id="productData">
+
+    </div>
+
+    <div class="modal fade" id="addProductModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modalheaderbg justify-content-center">
+                    <h5 class="modal-title text-white">Add New Products</h5>
+                </div>
+                <div class="modal-body modalbodybg">
+                    <form class="form-outline mb-4">
+                        <select class="form-select form-select-lg shadow-none" id="filterByCategory"></select>
+                        <p id="filterByCategoryError" class="text-primary"></p>
+                    </form>
+                    <form class="form-outline mb-4" autocomplete="off">
+                        <input type="text" id="productName" placeholder="Product Name"
+                            class="form-control form-control-lg shadow-none">
+                        <p id="productNameError" class="text-primary"></p>
+                    </form>
+                    <form class="form-outline mb-4" autocomplete="off">
+                        <input type="number" id="productPrice" placeholder="Product Price"
+                            class="form-control form-control-lg shadow-none">
+                        <p id="productPriceError" class="text-primary"></p>
+                    </form>
+                    <form class="form-outline mb-4" autocomplete="off">
+                        <input type="number" id="productDiscount" placeholder="Product Discount"
+                            class="form-control form-control-lg shadow-none">
+                        <p id="productDiscountError" class="text-primary"></p>
+                    </form>
+                    <form class="form-outline mb-4" autocomplete="off">
+                        <input type="file" id="productImage" placeholder="Product Image"
+                            class="form-control form-control-lg shadow-none" onchange="setFileName()">
+                        <p id="productImageError" class="text-primary"></p>
+                    </form>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="add-btn btn btn-secondary" onclick="addNewProduct()">Add</button>
+                        <button type="button" class="close-btn btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CDNs -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+        <script src="./api/script/admin.js"></script>
+</body>
+
+</html>
