@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Disable the back button to prevent navigating back to the welcome page
+        history.pushState(null, null, location.href);
+        window.addEventListener('popstate', function (event) {
+            history.pushState(null, null, location.href);
+        });
+    </script>
+    <title>Welcome Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <!--  jquery library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--  bootstrap library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!--  SweetAlert library -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="welcome.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid px-2 pt-0 overflow-scroll" id="bg-img">
+        <div class="row mb-3 pt-3" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            <div class="col-8 fs-3 fw-bolder">
+                <i class="bi bi-person-fill"></i> Welcome <span id="username"></span>
+            </div>
+            <div class="col-4 text-end ">
+                <button class=" rounded logout-btn fw-bold text-danger border border-2 border-danger bg-white"
+                    onclick="logOut()">Log Out <i class="bi bi-box-arrow-left"></i></button>
+            </div>
+        </div>
+
+        <hr class="mb-5">
+
+        <div class="row">
+
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+                <button class="btn btn-dark  border border-2 border-white btn-employees">Employees</button>
+            </div>
+            
+            
+
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+                <button type="button" class="btn btn-dark  border border-2 border-white" data-bs-toggle="modal"
+                    data-bs-target="#employeeModal">
+                    Add employee +
+                </button>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 mb-3">
+                <button type="button" class="btn btn-dark  border border-2 border-white" data-bs-toggle="modal"
+                    data-bs-target="#salaryModal">
+                    Add salary details +
+                </button>
+            </div>
+
+            <button type="button" class="btn btn-dark border   border-2 border-white" data-bs-toggle="modal"
+                style="margin-left: 12px;" data-bs-target="#viewSalaryModal">
+                View salary details <i class="bi bi-eye-fill"></i>
+            </button>
+
+            <!--employee details table-->
+            <div class="row visually-hidden" id="employees_details_table">
+                <div class="table-responsive">
+                    <table class="table table-striped table-primary table-bordered border-dark">
+                        <thead class="bg-secondary">
+                            <tr>
+                                <th scope="col">Employee Code</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Date of Join</th>
+                                <th scope="col">Date of Birth</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Working Status</th>
+                                <th scope="col">Designation</th>
+                                <th scope="col">Location</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employees_table_store"></tbody>
+                    </table>
+                </div>
+            </div>
+        
+
+        <!--salary details table-->
+        <div class="px-5">
+        <div class="row bg-white mt-3 visually-hidden" id="fetchedSalaryContainer">
+            <div class="text-end">
+                <button class="text-center border border-white bg-white" style="width: 35px;" id="closeSalaryDetails"><i
+                        class="bi bi-x-circle-fill text-danger"></i></button>
+            </div>
+            <p class="fw-bold">Employee Code: <span id="emp_code" class="fw-normal"></span></p>
+            <p class="fw-bold">Employee Name: <span id="emp_Name" class="fw-normal"></span></p>
+            <hr class="mb-3">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+                <h5 class="fw-bold shadow-lg bg-secondary">Earnings</h5>
+                <p class="fw-bold">Basic Pay: <span id="emp_bp" class="fw-normal"></span></p>
+                <p class="fw-bold">Dearness Allowance: <span id="emp_da" class="fw-normal"></span></p>
+                <p class="fw-bold">House Renting Allowance: <span id="emp_hra" class="fw-normal"></span></p>
+                <p class="fw-bold">City Compensator Allowance: <span id="emp_cca" class="fw-normal"></span></p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+                <h5 class="fw-bold shadow-lg bg-secondary">Deductions</h5>
+                <p class="fw-bold">Insurance: <span id="emp_insurance" class="fw-normal"></span></p>
+                <p class="fw-bold">Professional Tax: <span id="emp_pt" class="fw-normal"></span></p>
+                <p class="fw-bold">Provident Fund: <span id="emp_pf" class="fw-normal"></span></p>
+            </div>
+            <hr>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-3">
+                <p class="fw-bold">Total Gross/Earnings: <span id="emp_gross" class="fw-normal"></span></p>
+                <p class="fw-bold">Total Deductions: <span id="emp_deduction" class="fw-normal"></span></p>
+                <p class="fw-bold">Net: <span id="emp_net" class="fw-normal"></span></p>
+            </div>
+        </div>
+    </div>
+
+        <!-- Add Employee Modal -->
+        <div class="modal fade " id="employeeModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold text-decoration-underline text-primary"
+                            id="exampleModalLabel">Fill below details of new employee</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-6 bg-secondary " >
+                        <form method="post" action="#" id="employeeDetails">
+                            <label class="fw-bold">Employee_code:</label>
+                            <input name="employee_code" class="col-3 border border-dark rounded form-control mb-1"
+                                type="text" required>
+                            <label class="fw-bold">First_Name:</label>
+                            <input name="first_name" class="col-3 border border-dark rounded form-control mb-1"
+                                type="text" required>
+                            <label class="d-inline fw-bold">Last_Name:</label>
+                            <input name="last_name" class="border border-dark rounded form-control mb-1" type="text"
+                                required>
+                            <label class="d-block fw-bold">Date_of_join</label>
+                            <input name="doj" class="border border-dark rounded form-control mb-1" type="date"
+                                required>
+                            <label class="d-block fw-bold">Date_of_birth:</label>
+                            <input name="dob" class="border border-dark rounded form-control mb-1" type="date"
+                                required>
+                            <label class="d-block fw-bold">Gender:</label>
+                            <input name="gender" class="border border-dark rounded form-control mb-1" type="text"
+                                required>
+                            <label class="d-block fw-bold">Phone_Number:</label>
+                            <input name="phone" class="border border-dark rounded form-control mb-1" type="number"
+                                required>
+                            <label class="d-block fw-bold">Working_status_id:</label>
+                            <input name="w_id" class="border border-dark rounded form-control mb-1" type="text"
+                                required>
+                            <label class="d-block fw-bold">Designation_id:</label>
+                            <input name="d_id" class="border border-dark rounded form-control mb-1" type="text"
+                                required>
+                            <label class="d-block fw-bold">Location_id:</label>
+                            <input name="l_id" class="border border-dark rounded form-control mb-1" type="text"
+                                required>
+                            <label class="d-block fw-bold">Ddo_code:</label>
+                            <input name="ddo_code" class="border border-dark rounded form-control mb-1" type="text"
+                                required>
+                            <input class="border border-dark rounded form-control bg-primary text-white mb-3"
+                                type="submit" value="save" data-bs-dismiss="modal">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Salary Modal -->
+        <div class="modal fade" id="salaryModal" tabindex="-1" aria-labelledby="salaryModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold text-decoration-underline text-primary"
+                            id="salaryModalLabel">Add Salary</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-6 bg-secondary">
+                        <form method="post" action="#" id="salaryDetails">
+                            <label class="fw-bold">Employee_code:</label>
+                            <input name="employee_code1" class="col-3 border border-dark rounded form-control mb-2"
+                                type="text" required>
+                            <label class="fw-bold">Earn_Deduction_id:</label>
+                            <input name="earn_deduction_id"
+                                class="col-3 border border-dark rounded form-control mb-2" type="text" required>
+                            <label class="fw-bold">Amount:</label>
+                            <input name="amount" class="border border-dark rounded form-control mb-2" type="text"
+                                required>
+                            <label class="d-block fw-bold">With_Effect_date</label>
+                            <input name="with_effect_date"
+                                class="border border-dark rounded form-control mb-3" type="date" required>
+
+                            <input class="border border-dark rounded form-control bg-primary text-white mb-3"
+                                type="submit" value="save" data-bs-dismiss="modal">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View salary modal -->
+        <div class="modal fade" id="viewSalaryModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold text-decoration-underline text-primary"
+                            id="exampleModalLabel">Fill below details to view salary</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-6 bg-secondary">
+                        <form method="post" action="#" id="fetchSalary">
+                            <h5>Fill below details to get salary details</h5>
+                            <label>Employee_code: </label>
+                            <input type="text" class="col-3 border border-dark rounded form-control mb-2" name="employee_code_fetchSalary">
+                            <label>Ddo_code</label>
+                            <input type="text" class="col-3 border border-dark rounded form-control mb-2" name="ddo_code_fetchSalary">
+                            <label>Month:</label>
+                            <input type="text" class="col-3 border border-dark rounded form-control mb-2" name="month_fetchSalary">
+                            <label>Year</label>
+                            <input type="text" class="col-3 border border-dark rounded form-control mb-3" name="year_fetchSalary">
+                            <input class="border border-dark rounded form-control bg-primary text-white mb-3" type="submit" value="Get details" data-bs-dismiss="modal">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+    
+</body>
+</html>
