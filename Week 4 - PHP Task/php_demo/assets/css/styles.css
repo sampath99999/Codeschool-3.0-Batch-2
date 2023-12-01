@@ -1,0 +1,37 @@
+body {
+    background-color: #fbfbfb;
+  }
+  
+  .nav {
+    background-color: white;
+  }
+.sidebar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100vh;
+            background-color: #fff;
+            transition: left 0.3s ease;
+        }
+  
+        .collapsed {
+            left: -200px;
+        }
+  
+        #sidebarToggle {
+            position: absolute;
+            top: 0;
+            right: -30px;
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+      .modal.fade .modal-dialog {
+        transform: translate(0, -50%);
+        transition: transform 0.3s ease-out;
+      }
+  
+      .modal.show .modal-dialog {
+        transform: translate(0, 0);
+      }
