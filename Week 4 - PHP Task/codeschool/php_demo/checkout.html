@@ -1,0 +1,48 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Checkout</title>
+        <style>
+            /* Add your CSS styles here */
+        </style>
+    </head>
+    <body>
+        <div id="checkout-container">
+            <h1>Checkout</h1>
+            <form id="checkout-form">
+                <label for="product">Product:</label>
+                <input type="text" id="product" name="product" required />
+
+                <label for="quantity">Quantity:</label>
+                <input
+                    type="number"
+                    id="quantity"
+                    name="quantity"
+                    min="1"
+                    required
+                />
+
+                <label for="total">Total:</label>
+                <input type="text" id="total" name="total" readonly />
+
+                <button type="button" onclick="calculateTotal()">
+                    Calculate Total
+                </button>
+                <button type="submit">Checkout</button>
+            </form>
+        </div>
+
+        <script>
+            function calculateTotal() {
+                // Add your logic to calculate the total based on product and quantity
+                // For simplicity, let's assume a fixed price of $10 per item
+                const pricePerItem = 10;
+                const quantity = document.getElementById("quantity").value;
+                const total = pricePerItem * quantity;
+                document.getElementById("total").value = $
+                .format(total);
+            }
+        </script>
+    </body>
+</html>
