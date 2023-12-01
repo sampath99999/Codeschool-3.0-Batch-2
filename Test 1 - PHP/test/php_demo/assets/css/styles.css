@@ -1,0 +1,62 @@
+body {
+    background-color: lightskyblue;
+  }
+  
+  .nav {
+    background-color: white;
+  }
+.sidebar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100vh;
+            background-color: #fff;
+            transition: left 0.3s ease;
+            z-index: 100;
+        }
+  
+        .collapsed {
+            left: -200px;
+        }
+  
+        #sidebarToggle {
+            position: absolute;
+            top: 0;
+            right: -30px;
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+      .modal.fade .modal-dialog {
+        transform: translate(0, -50%);
+        transition: transform 0.3s ease-out;
+      }
+  
+      .modal.show .modal-dialog {
+        transform: translate(0, 0);
+      }
+      .table {
+          width: 100%;
+          margin-top: 20px;
+          border-collapse: collapse;
+      }
+  
+      .table th, .table td {
+          padding: 10px;
+          text-align: left;
+          border: 1px solid #dee2e6; /* Bootstrap default table border color */
+      }
+  
+      .table thead th {
+          background-color: #007bff; /* Change to your desired header background color */
+          color: white;
+      }
+  
+      .table tbody tr:nth-child(odd) {
+          background-color: #f8f9fa; /* Change to your desired odd row background color */
+      }
+  
+      .table tbody tr:hover {
+          background-color: #e9ecef; /* Change to your desired hover row background color */
+      }
