@@ -10,9 +10,8 @@ $pdo = getPDO();
 $query = "SELECT * FROM books";
 $stmt = $pdo->prepare($query);
 $stmt->execute();
-$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Return data as JSON
 header('Content-Type: application/json');
-
 echo json_encode($books);

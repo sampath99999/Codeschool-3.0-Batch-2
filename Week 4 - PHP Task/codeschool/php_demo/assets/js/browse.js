@@ -8,7 +8,7 @@ function searchData() {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/codeschool/php_demo/api/browse.php",
+        url: "browse.php",
         data: { token: token, search: searchValue },
         success: function (response) {
             $("#searchResults").html(response.message);
