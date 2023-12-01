@@ -38,7 +38,7 @@
         // Function to fetch all books or search for books
         function fetchBooks(searchTerm = null) {
             $.ajax({
-                url: 'http://localhost/codeschool/php_demo/api/fetch_books.php',
+                url: 'http://localhost/codeschool/php_demo/api/fetchbook.php',
                 type: 'GET',
                 data: { search: searchTerm },
                 dataType: 'html',
@@ -67,7 +67,7 @@
                 fetchBooks(searchTerm);
             });
         });
-        function addToCart(){
+         function addToCart(){
             const user_id = prompt("Enter user_id:");
             const quantity = prompt("Enter Quantity:");
     const total = prompt("Enter Total:");
@@ -99,13 +99,73 @@
     }
 }
 
+function logout() {
+    localStorage.removeItem("token");
+    location.href = "./login.html";
+}
+
+        
     </script>
+     <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .navbar-brand {
+            color:black !important;
+        }
+
+        .navbar-toggler {
+            background-color: #ffffff;
+        }
+
+        .nav-link {
+            color: #dc3545 !important;
+        }
+
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        #book-listing {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg justify-content-between w-100">
         <div class="container py-3">
             <a class="navbar-brand fw-medium fs-2" href="#"
-                ><i class="bi bi-book"></i>&nbsp;Book Gallery</a
+              ><i class="bi bi-book"></i>&nbsp;Book Gallery</a
             >
             <button
                 class="navbar-toggler"
@@ -138,7 +198,7 @@
                     </li>
                     <li class="nav-item me-5">
                         <a
-                            href="cart.html"
+                            href="#"
                             class="list-group-item list-group-item-action py-2 ripple"
                             aria-current="true"
                         >
@@ -169,7 +229,7 @@
             <button id="search">Search</button>
 
 <!-- Book listing container -->
-            <div id="book-listing" class="mt-2"></div>
+            <div id="book-listing" class="mt-5"></div>
         </div>
     </div>
 </div>

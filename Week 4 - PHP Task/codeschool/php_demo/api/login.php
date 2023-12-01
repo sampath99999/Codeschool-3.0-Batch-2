@@ -1,5 +1,5 @@
 <?php
-include("./utils/cors.php");
+// include("./utils/cors.php");
 require_once("./utils/functions.php");
 require_once("./utils/db.php");
 
@@ -21,7 +21,7 @@ $password = md5($_POST["password"]);
 
 $pdo = getPDO();
 
-$query = "SELECT id, name FROM users WHERE email = :email AND password = :password";
+$query = "SELECT user_id, name FROM users WHERE email = :email AND password = :password";
 $stmt = $pdo->prepare($query);
 $stmt->bindParam("email", $email, PDO::PARAM_STR);
 $stmt->bindParam("password", $password, PDO::PARAM_STR);
@@ -35,9 +35,9 @@ $token = uniqid();
 
 $query = "UPDATE users SET token = :token WHERE email = :email AND password = :password";
 $stmt = $pdo->prepare($query);
-$stmt->bindParam("token", $token, PDO::PARAM_STR);
-$stmt->bindParam("email", $email, PDO::PARAM_STR);
-$stmt->bindParam("password", $password, PDO::PARAM_STR);
+$stmt->bindParam("token", $token);
+$stmt->bindParam("email", $email);
+$stmt->bindParam("password", $password);
 $stmt->execute();
 
 

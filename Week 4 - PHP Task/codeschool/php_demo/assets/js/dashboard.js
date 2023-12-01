@@ -27,6 +27,3 @@ function logout() {
     localStorage.removeItem("token");
     location.href = "./login.html";
 }
-document.getElementById("sidebarToggle").addEventListener("click", function () {
-    document.getElementById("sidebarMenu").classList.toggle("collapsed");
-});

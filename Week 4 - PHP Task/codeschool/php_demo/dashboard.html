@@ -35,14 +35,55 @@
             integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd"
             crossorigin="anonymous"
         />
+        <style>
+            body {
+                background-color: #f8f9fa;
+                font-family: "Roboto", sans-serif;
+            }
+            .navbar {
+                background-color: #007bff;
+            }
+            .navbar-brand {
+                color: #fff;
+                font-weight: bold;
+                font-size: 1.5rem;
+            }
+            .navbar-toggler-icon {
+                background-color: #fff;
+            }
+            .navbar-nav .nav-link {
+                color: #fff;
+                margin-right: 15px;
+            }
+            .navbar-nav .nav-item:hover {
+                color: #f0f0f0;
+            }
+            .navbar-nav .nav-link:hover {
+                color: #f0f0f0;
+            }
+            .container {
+                margin-top: 2rem;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 1rem;
+            }
+            th,
+            td {
+                border: 1px solid #dee2e6;
+                padding: 0.75rem;
+                text-align: left;
+            }
+        </style>
     </head>
     <body>
         <!-- Header -->
-        <nav class="navbar navbar-expand-lg justify-content-between w-100">
+        <nav class="navbar navbar-expand-lg justify-content-between">
             <div class="container py-3">
-                <a class="navbar-brand fw-medium fs-2" href="#"
-                    ><i class="bi bi-book"></i>&nbsp;Book Gallery</a
-                >
+                <a class="navbar-brand fw-medium fs-2" href="#">
+                    <i class="bi bi-book"></i>&nbsp;Book Gallery
+                </a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -59,125 +100,54 @@
                     id="navbarSupportedContent"
                 >
                     <ul class="navbar-nav d-flex mb-2 mb-lg-0 ms-auto">
-                        <!-- <button class="btn btn-lignt" type="button">
-                            ADD ITEMS
-                        </button> -->
                         <li class="nav-item me-5">
                             <a
                                 href="./fetchbook.html"
                                 class="list-group-item list-group-item-action py-2 ripple"
                                 aria-current="true"
                             >
-                                <i class="bi bi-book"></i
-                                ><span>&nbsp;Books</span>
+                                <i class="bi bi-book"></i>&nbsp;Books
                             </a>
                         </li>
                         <li class="nav-item me-5">
                             <a
-                                href="browse.html"
+                                href="#"
                                 class="list-group-item list-group-item-action py-2 ripple"
                                 aria-current="true"
                             >
-                                <i class="bi bi-sort-up"></i
-                                ><span>&nbsp;Orders</span>
+                                <i class="bi bi-people-fill"></i>&nbsp;User
                             </a>
                         </li>
-                        <li class="nav-item me-5">
-                            <a
-                                href="cart.html"
-                                class="list-group-item list-group-item-action py-2 ripple"
-                                aria-current="true"
-                            >
-                                <i class="bi bi-sort-up"></i
-                                ><span>&nbsp;checkout</span>
-                            </a>
-                        </li>
-                        
-                        <li class="nav-item me-5">
-                            <a
-                                href="userprof.html"
-                                class="list-group-item list-group-item-action py-2 ripple"
-                                aria-current="true"
-                            >
-                                <i class="bi bi-sort-up"></i
-                                ><span>&nbsp;Userprofile</span>
-                            </a>
-                        </li>
-                       
                         <li class="nav-item">
                             <a
                                 class="nav-link text-danger"
                                 onclick="logout()"
                                 href="#"
-                                >Logout</a
                             >
+                                Logout
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- <h1 class="text-center">Hi, <span id="userName"></span></h1> -->
-        <!-- <header class="position-absolute">
-            <div
-                id="sidebarMenu"
-                class="collapse d-block sidebar collapse bg-white"
-            >
-                <button id="sidebarToggle" class="btn btn-primary">
-                    <span
-                        ><i class="fa-solid fa-bars" style="color: black"></i
-                    ></span>
-                </button>
-                <div class="position-sticky">
-                    <div class="list-group list-group-flush mx-3 mt-4">
-                        <a
-                            href="#"
-                            class="list-group-item list-group-item-action py-2 ripple"
-                            aria-current="true"
-                        >
-                            <i class="bi bi-book"></i><span>&nbsp;Books</span>
-                        </a>
 
-                        <a
-                            href="#"
-                            class="list-group-item list-group-item-action py-2 ripple"
-                            ><i class="bi bi-people-fill"></i
-                            ><span>&nbsp;Users</span></a
-                        >
-                        <a
-                            href="#"
-                            class="list-group-item list-group-item-action py-2 ripple"
-                            aria-current="true"
-                        >
-                            <i class="bi bi-sort-up"></i
-                            ><span>&nbsp;Orders</span>
-                        </a>
-                        <a
-                            href="#"
-                            class="list-group-item list-group-item-action py-2 ripple"
-                            aria-current="true"
-                        >
-                            <i class="bi bi-bell-fill"></i
-                            ><span>&nbsp;Logout</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </header> -->
-        <div class="container mt-4">
+        <div class="container">
             <table class="table">
                 <thead></thead>
                 <tbody id="productTableBody"></tbody>
             </table>
         </div>
-    </body>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"
-    ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script src="./assets/js/dashboard.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script src="./assets/js/dashboard.js"></script>
+    </body>
 </html>
