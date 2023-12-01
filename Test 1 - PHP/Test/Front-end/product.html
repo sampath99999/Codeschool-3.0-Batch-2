@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Product Page</title>
+    <style>
+        body {
+            padding-top: 56px;
+            /* Adjust the height based on your navbar */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Abdi.com</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./product_register.html">Register products <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="logout()">logout</a>
+                </li>
+                <!-- Add more navbar items as needed -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Product Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Image Column -->
+            <div class="col-md-6 " style="height:750px; ">
+                <img src="../Assets/first.jpeg" alt="Product Image" class="img-fluid product-image" style="height:700px;">
+            </div>
+            <!-- Product Details Column -->
+            <div class="col-md-6">
+                <div class="container">
+                    <h2 class="text-center mb-4">Product Table</h2>
+                    <table class="table table-bordered">
+
+                        <tbody class="tbody">
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="../Assets/product.js"></script>
+    <script>
+        function logout() {
+            localStorage.clear();
+            location.href = "./login.html";
+        }
+    </script>
+</body>
+
+</html>
