@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Donation Page</title>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <!-- Include any necessary CSS styles here -->
+        <style>
+            body {
+                font-family: "Arial", sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
+
+            .step {
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin: 20px auto;
+                padding: 20px;
+                max-width: 400px;
+            }
+
+            h2 {
+                color: #333;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                margin-bottom: 5px;
+            }
+
+            input {
+                padding: 8px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+            button {
+                background-color: #4caf50;
+                color: #fff;
+                padding: 10px;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+                margin-bottom: 10px;
+            }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+            button[type="submit"] {
+                background-color: #007bff;
+            }
+
+            button[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="step1" class="step">
+            <h2>Step 1: User Details</h2>
+            <form id="userForm" autocomplete="on">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required />
+
+                <button type="submit" onclick="nextStep()">Next</button>
+            </form>
+        </div>
+
+        <div id="step2" class="step" style="display: none">
+            <h2>Step 2: Amount</h2>
+            <form id="amountForm" autocomplete="on">
+                <label for="amount">Select or Enter Amount:</label>
+                <select style="height: 30px" id="amount" name="amountDropdown">
+                    <option value="500.00">$500.00</option>
+                    <option value="1000.00">$1000.00</option>
+                    <option value="2000.00">$2000.00</option>
+                </select>
+                <span style="margin-top: 20px">or</span>
+                <input
+                    style="margin-top: 20px"
+                    type="number"
+                    id="amount"
+                    name="customAmount"
+                    placeholder="Enter Custom Amount"
+                />
+
+                <button type="button" onclick="prevStep()">Previous</button>
+                <button type="submit" onclick="nextStep()">Next</button>
+            </form>
+        </div>
+
+        <div id="step3" class="step" style="display: none">
+            <h2>Step 3: Card Details</h2>
+            <form id="cardDetailsForm" autocomplete="on">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required />
+
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="text" id="expiryDate" name="expiryDate" required />
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required />
+
+                <button type="button" onclick="prevStep()">Previous</button>
+                <button type="submit">Donate</button>
+            </form>
+        </div>
+
+        <script>
+            function nextStep() {
+                document.getElementById("step1").style.display = "none";
+                document.getElementById("step2").style.display = "block";
+                document.getElementById("step3").style.display = "block";
+            }
+
+            function prevStep() {
+                document.getElementById("step3").style.display = "none";
+                document.getElementById("step1").style.display = "block";
+            }
+        </script>
+        <script src="./assets/js/index.js"></script>
+    </body>
+</html>
