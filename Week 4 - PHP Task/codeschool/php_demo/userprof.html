@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+    // Make an AJAX request to get user profile data
+  
+function loadProductData() {
+            // Fetch product data from the server
+            $.ajax({
+              type: "GET",
+              url: "http://localhost/codeschool/php_demo/api/getUserProfile.php",
+              success: function(products) {
+                console.log(products);
+        
+                // Clear existing table rows
+                $("#productTableBody").empty();
+        
+                // Append new table rows based on the fetched product data
+                products.forEach(function(product) {
+                  var tableRow = `<tr>
+                    <td>${product.name}</td>
+                    <td>${product.email}</td>
+                  </tr>`;
+                  $("#productTableBody").append(tableRow);
+                });
+              },
+              error: function(error) {
+                console.error("Error:", error);
+                // Handle error, e.g., show an alert
+                // alert(",Error communicating with the server.");
+              },
+            });
+          }
+        });
+    </script>
+</head>
+<body>
+
+<h1>User Profile</h1>
+<span id="name"></span>
+
+<div id="profile" >
+    <!-- User profile information will be displayed here using AJAX -->
+</div>
+<div id="productTableBody">
+
+</div>
+<h2>Orders-histroy</h2>
+
+</body>
+</html>
