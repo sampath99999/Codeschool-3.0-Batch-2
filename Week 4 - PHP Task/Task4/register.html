@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./api/styles/login.css">
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg nav_color py-4 px-3 text-white">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-3 text-white" href="http://localhost/Task4/index.html">Online Store</a>
+            <div class="px-1 ms-auto">
+                <a class="navbar-brand fs-3 text-white">Register Page</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Body -->
+    
+  <section class="container">
+    <form class="form w-100 my-5 d-flex justify-content-center" id="reg_form" autocomplete="off">
+        <div class="row col-3 d-flex flex-column align-items-center">
+            <div class="input-box">
+                <input type="text" class="form-control" id="reg_email" placeholder="e-Mail Address">
+                <p class="my-4" id="email_error"></p>
+            </div>
+            <div class="input-box">
+                <input type="text" class="form-control" id="reg_name" placeholder="Name">
+                <p class="my-4" id="name_error"></p>
+            </div>
+            <div class="input-box">
+                <input type="text" class="form-control" id="reg_uname" placeholder="Username">
+                <p class="my-4" id="uname_error"></p>
+            </div>
+            <div class="input-box">
+                <input type="password" class="form-control" id="reg_pwd" placeholder="Password">
+                <p class="my-4" id="pwd_error"></p>
+            </div>
+            <button type="submit" class="mb-5 btn btn-primary w-50">Register</button>
+            <button type="button" class="btn btn-primary w-100" onclick="login()" >Already have an Account?</button>
+        </div>   
+    </form>
+</section>
+    <!-- CDNs -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="./api/script/register.js"></script>
+</body>
+
+</html>
