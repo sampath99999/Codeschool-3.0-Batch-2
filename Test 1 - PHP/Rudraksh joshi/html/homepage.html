@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+   
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">Eight Arms</a>
+        <button
+          class="navbar-toggler"
+          style="background-color: white"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon text-white"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-white"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#"
+                >WHAT WE DO</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">TEAM</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">PROJECTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white text-decoration-underline" href="#"
+                >NEWS</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-underlined text-white" href="#"
+                >CONTACT</a
+              >
+            </li>
+
+            <li class="nav-item mt-1">
+              <button class="text-white bg-danger btn" href="#" id="logout">
+                LOGOUT
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row d-flex flex-column">
+        <div
+          class="col mt-5 d-flex flex-column justify-content-center align-items-center"
+        >
+          <h1 class="display-4 fw-bold">
+            A place for our thoughts, fears , finds ,fads,
+          </h1>
+          <h1 class="display-4 fw-bold">Obsessions and opinons</h1>
+        </div>
+        <div class="col">
+          <div class="row d-flex justify-content-center gap-4 mt-5">
+            <button
+              class="btn btn-dark text-white"
+              style="width: 150px; border: solid"
+            >
+              All</button
+            ><button
+              class="btn btn-dark text-white"
+              style="width: 150px; border: solid"
+            >
+              Friday Five</button
+            ><button
+              class="btn btn-dark text-white"
+              style="width: 150px; border: solid"
+            >
+              Insight</button
+            ><button
+              class="btn btn-dark text-white"
+              style="width: 150px; border: solid"
+            >
+              News
+            </button>
+            <button
+              class="btn btn-dark text-white"
+              style="width: 150px; border: solid"
+            >
+              Profile
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row d-flex justify-content-center mt-5 gap-4" id="postrow"></div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/homepage.js"></script>
+  </body>
+</html>
