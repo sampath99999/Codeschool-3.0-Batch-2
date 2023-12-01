@@ -1,0 +1,39 @@
+@media (max-width: 576px) {
+    #employees_table {
+        overflow-x: auto;
+        display: block;
+        font-size: 12px;
+    }
+
+}
+
+@media only screen and (max-width: 576px) {
+    .btn {
+        height: 50px;
+        width: 150px;
+        font-weight: lighter;
+    }
+}
+
+.container-fluid {
+    background-image: url("istockphoto-1335515299-612x612.jpg");
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btn {
+    height: 50px;
+    width: 210px;
+    font-weight: bolder;
+}
+
+.btn:hover {
+    color: black;
+    background-color: rgb(140, 204, 229);
+    transform: scale(1.1);
+}
+
+.logout-btn:hover {
+    transform: scale(1.1);
+}
