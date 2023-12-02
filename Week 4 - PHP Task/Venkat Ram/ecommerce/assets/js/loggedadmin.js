@@ -1,5 +1,6 @@
 let products = [];
 let category = [];
+let image = ""
 
 let productName;
 let userInfo;
@@ -18,6 +19,23 @@ if (!userInfo) {
 }
 
 $('#greeting').text(`${user.name.replace(/\b\w/g, l => l.toUpperCase())} !`);
+
+$("#addProduct").click(() => {
+  let category_id = $("#filterByCategory").val();
+  let name = $("#productName").val();
+  let price = $("#productPrice").val();
+  let discount = $("#productDiscount").val();
+
+})
+
+$("#productImage").change(function () {
+  const reader = new FileReader();
+  reader.readAsDataURL($("#productImage").prop("files")["0"]);
+  reader.addEventListener("load", function () {
+      image = reader.result;
+  });
+});
+
 
 
 $.ajax({
@@ -56,7 +74,7 @@ function showProducts(product) {
           <div class="col-3">
             <div class="ms-3">
             <div class="card mt-5 px-4 border-2 shadow-lg justify-content-center overflow-hidden" style="width: 20rem; height: 25rem">
-                <img src="../${product[i].image}" class="card-img-top mt-5 h-50" alt="Broken Link" style="object-fit: contain"/>
+                <img src="${product[i].image}" class="card-img-top mt-5 h-50" alt="Broken Link" style="object-fit: contain"/>
                 <div class="card-body d-flex flex-column align-items-center">
                   <h5 class="card-title mt-1 fs-4 fw-bolder text-center">${product[i].name}</h5>
                   <p class="card-text mt-1 mb-3">
@@ -96,7 +114,6 @@ function addNewProduct() {
   let name = $("#productName").val();
   let price = $("#productPrice").val();
   let discount = $("#productDiscount").val();
-  let image = `assets/img/${$("#productImage").val().substring(12,)}`;
 
   let form = {
     category_id,
@@ -117,7 +134,7 @@ function addNewProduct() {
       window.location.replace("http://localhost/ecommerce/assets/loggedadmin.html");
     },
     error: function (status) {
-      console.log('Request failed with status: ' + status);
+      console.log('Request failed with status: ' + JSON.stringify(status));
     }
   });
 }

@@ -78,7 +78,7 @@ function showProducts(products) {
         <div class="col-3">
           <div class="ms-3">
           <div class="card mt-5 px-4 border-2 shadow-lg justify-content-center overflow-hidden" style="width: 20rem; height: 25rem">
-              <img src="../${products[i].image}" class="card-img-top mt-5 h-50" alt="Broken Link" style="object-fit: contain"/>
+              <img src="${products[i].image}" class="card-img-top mt-5 h-50" alt="Broken Link" style="object-fit: contain"/>
               <div class="card-body d-flex flex-column align-items-center">
                 <h5 class="card-title mt-1 fs-4 fw-bolder text-center">${products[i].name}</h5>
                 <p class="card-text mt-1 mb-3">
@@ -114,7 +114,6 @@ function filterProduct() {
 }
 
 function addToCart(index) {
-  console.log(myCart);
   let product = products[index];
 
   product.quantity = 1;
@@ -139,7 +138,6 @@ function addToCart(index) {
     data: { product: product, user_id: user.id },
     success: function (data) {
       cartCount();
-
     },
     error: function (status) {
       console.log('Request failed with status: ' + JSON.stringify(status));
@@ -164,9 +162,9 @@ function cartCount() {
     dataType: 'json',
     data: formData,
     success: function (data) {
-      console.log(data)
+      console.log(data)  
       let myCartCount = data.data;
-      $("#cart").text(myCartCount[0].count);
+      $("#cartValue").text(`Cart: ${myCartCount[0].count}`);
 
     },
     error: function (status) {
@@ -218,7 +216,7 @@ function showCart() {
 
       $("#showMyCart").append(`<tr>
              <td align="center" style="vertical-align:middle;">
-               <img src="../${myCart[i].image}" alt="" height="100px" />
+               <img src="${myCart[i].image}" alt="" height="100px" />
              </td>
              <td align="center" style="vertical-align:middle;">${myCart[i].name}</td>
              <td align="center" style="vertical-align:middle;">${myCart[i].quantity}</td>
