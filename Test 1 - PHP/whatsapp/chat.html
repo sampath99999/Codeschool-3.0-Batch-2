@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whatsapp chat</title>
+    <link rel="icon" href="\xampp\htdocs\whatsapp\wa.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet">
+    <style>
+        #chat-box {
+            max-width: 300px;
+            height: 400px;
+            border: 1px solid lightgrey;
+            overflow-y: scroll;
+            padding: 10px;
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAtwMBIgACEQEDEQH/xAAZAAADAQEBAAAAAAAAAAAAAAAAAQIDBAf/xAAzEAABAwMCBQEIAQQDAQAAAAABAAIREiExIkEDMlFhcUITUmKBkaGx8MEjctHhgpKiM//EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD2cfBV/wBp+xKRfyu9Xu/OD4WjBQyml32UgczqatWn7D+EEFvxOaHczaf2Cqh3pbTTipW4Or+FDme7EHmqQS7fyIRwxh3QwqFHpx2sEjHMzO2lA+JR6xLf7Vm3W1jXNkzcNtStG1OJ6QpBa3TwxURlBi8a3Ew0ggAHotA1kF7HEFtyBv5Vy12W6tlFBMChwzJG6CosHNbAHo/lJjtR0fEqMhtJAMZHVTURpaJebVd0Euj2ZILyCdUekftkoAcSAHNkXOZ2C1eQHtG/8JF7WmA239v4CBFwJrLWgBoM1J8SfdwZDuiZbJk6Q3HdDXVVATbtCCCP6lPFdpiRJhHM2DS5oOasJsY4yJHyd/pDWH2haC4tgSHYQS7hl7iWwYccusq9kA0yA09WzZNwLTAJA6DCC2BVJdG1KBQ2preG68bflEhgDCRxCeuyHktiKhPqzPZJw1Bz2w27i35AIK8cQnsACAhZhp4gLII952HGMeEIKe93v/hDTytp1e9iwVPa39+8pcRrvT2pjsgfs/h0t+qYGqk1UlEh2+o2JHpSBbZ01Nm577IKayzqXKaHEeLKiaP3ZANQdTpO6ANm0B12gJRSxvT1K8sjm7qCHM+JqBu1MqyRZD6tIOIupOoibBWXNzFxYZQSRyza9+ybaqjNIHUZSAgQOWJE9VTatmgHe6CfZxUcyMnKqeR3bdSSCwlwm8WVTDQSYGwQSbZ3zEIAh5odtqkyU3bOiUQ0mcRtCBGAzVVncxKoQ2kt5SoMv1DBSa4tiOiBguAuYkmT3Rw+W0usm4hxMttGrqhxFmDCAty1hwFoIVAf0wHAi6yBiR1+i0MM4bahJabIIAcSKHDl6d0KySQ4CGuByhA2lTOil1qf0IaRq1O05/fkpJpw49fKCtI9OpydU8iI5WubV91FJb8I3PVA2Cp0u1U48qoq9KCK2QbUobkG+lAA0iMKaZt/KK4nygagHOluZEZCABjTUUVfrkCIu6/4SL2uIa+CNjEIHMgg6e7d1Tm6m2qsi4EcO/5ClrXHFhaOwhBTYo5985SN5FYvywpGskxiwCVOsOpiTCB8MgSHOk/ZWC1QC1vDAIk3QxrCRLQIsgsVW1yI33QR7vKgU3J9NlIcYMYQOi1ItG/VOzhqyEgcxMTZS7kBblx3QOposFLX5tpN4hAB2BPTZDoIIIAJdayDVk4DYAQpLq3SwmAMeUIG+nm35eyjiPpZpp+VlpGtvzd+/VQeGOWD9dv0IJ4HEr/5f7/wrZS+0k0pcOlrsKhDX2Ip8oCaQQL/ABIOhtQxF1D8uFtXdN12NAvAwEDc2o8ondHEMtBaRA+6Htd7N14i9kg11Lp6IIeOG4AwmSXxAApvlMjVUXQAAAFQZTqHNugC62/kDKWrJDoTABtNmiPokRu0GO5QABF22nqmWuOp1zsmQaxYYylhpaZJnZBABZwy4m4t4T9lqvckZVOc2v2e8IFYsAPKBNqcIkaShoAmvO5KbYZLTzOuSgAlukkifmgTw0lsGR2TMljrzex6oFVmlpiLlEtJHDIsBPyQSGGLzHd2yGNZfZVA5i7QMQkbiC2JIIKAILsWAjfOUJke0DoEQfqhAmGrS+56lMmjFvKhg5WsvqOfN1bvV7rv3/KCC/rP1VcGQ65geEAN7R0AQTfYeblAxeN4MWTBIYQKSeyiqcfXATuzVAkfhANLnkHvsg8Q1EFtgqLjhoAIuocHP1DBsQgOGZca97tVMa4PuD3k2SDYIJMWgSi5y6SLHZAzXAsLTMKmgUuB94x87/ypNB5ebtZJ7SXdRF/KCanBwk2OPmqZVzH1iU2slpFNj1KGgNBpdJ6dEDu4csOxPUIdcC+rCkOdWMkTFvumWUxGZlAjNMlxnCGPqIERG/VDmE6SbZQdIkenKB2MkuI9KihwAcTVBt2VzUS0m0ZhKh+oTI2KALpYQAMXVQ4OBy0A2Uuizmmn5YTGJkg7d0EucScxpB+5Qrs8UPbTPTdCCS6Hw0jmwBGyoCHeLjud0B4wbHqLoM0O1i/L2QBLap23UFv/AJTJMyWyFPCNLoJNRyCgtrQPUPkiPd5veN0qmuDg7T0TjSGi0ZndAn+86/psqmmG4EZSY4UuMjrYIiQJuM3QRIIJdkHyU2Ob7S0m26l7dZAMA3QAGjSaiOiCwXB8u9NifonAkyS4np0RUHPBvAH1UHiOkgRB+qDQENFgR5Utb7JgOXGJ8qRU9p1EkYlaOMuLW5EEoIreHFpaKdyFTabENJm0qAxzXVAH8qxMAFtoKBNoL4gWt5Uu4biTQ+OyvhtaDVy2x0QwkggX7oJYag5jzPjonEf1GzO47JtaGuvkqYZJoZJFsoNHFocHbRdSSwcQvJk7BB5iae2bFFJikUiOyDP0c3q+fVJWA+kVEFwwhAyZ2DYzO6UVNbOeiKhtAf4JCb741eEDaTQzp1QTrhS6IkiHHABuEGqNIDRseiBiRLXNB6IMua0xbohoMy4yOuUA+k4QS10GSADOArJIu4CnopDcxe+Aq5g5x2NggTRImcC+6Ia0xE7lIklwwOwVl03aCIz3QKQ/UIttCLHLY8JEkkG8Tuh1JN6vogDf4QN9yjJAIkdkw+RAbPSd0nMkANkfFuEASXNBbOcBDS4sgOv0KA2f7RkdUng7QOklA5daPvugTBbZrtgkHET6j2yiKRqIqOED4UtaS5MNa0FygOdVGW9Cm5sieWdpygmS6lsXlPiOLLE79UNHDiK5BsrAAEB2eqCeHehxABMoTF3XMxi+EIEzSyoYOR08JlrqLGB3NkgXNe1tNv56qnFtUF1VWWjIQJjQ0AEhoOAcpw7VfUdugQTEwwEjElJkvJdDbtQJz2loGtviyZcHcwI8qYAZQ7hmRukA75C990GjQDwyDjqMopty+L5S4Zhp+ymX3M2JsgtgDcta0d03f/MHx+VJfVptOb4KIbBqjmmBsEABS0h96TfvKhzidVIAGYzCsEN9Q7y03ScQWkNLRbEoG0CawdLQInayRuGwSSTM9kmPhtOZj8BMikgA6Zue6BOLmkGSAcxtKUSaqaptGCtGtl5vOlWQKpi8QgwbFbajgxZW8RLHCR1QWhruwhAlzXOJucIE0BsGo9PmkWgul0noMQmOWmYIMghNoLSLB0m8bIJYyXE2DUyJ1GIOJ2VyRLoB2tsoMg21N6BAEAN9o23WEkU1EBjaAdjv8kIKZxIkEyZgHp5S5C0UHpj6XQRTVfSwyGxndU801FzgQCIHjKBM4UCqojxZDRTO7hthV7RjjS2T4UVvioNp2iED4bjTL8ddvokQyZDXT8vwnxLhhFmk4QRpggSOgP5QOmO7TaykNFILZA+Kypp0kC8DZFJF3nTmEEmprgS2IV3iQ6Seg2UtppNTsm1Wybz6RpHXqgbS4GDJOwUlz73AkWNlUBrgdRPLhZUuhsHaCScINJJ4gwZxaOqRaaaXMBi8zuoY6Q6tppifHVOgtbVVDdgBKC2NphjfJKouvbZZjiAO1XgCdkyQ10tIvkE3hAcQ6iMjKUsA1SPsEF/Dkl0UkWJQ2lztAbA7ICJbXBvenBVMgCQZ7C8fRRMU7y6CSFoBxHTYNvaboEIabNMnc4Q1xbNpjok4xIrc542H+kMFTRVIho+qA5uI4OuBhCJa58VUukkAbhCBvaGGq7ifeP71S4jicxmPsUkINCbybpcUyaNkIQS6/EDdlRYIOcIQgiaeGHDJF1PBPtuHrn5EpIQZs4ri7ikwaCGjwugX4IO8IQgZJpcJ2KfDaHND3TVMIQgrjaWYmeq5vbuOkgR80IQXw3UsJAEgxKvjOo4bS0DKEIMOHxnTEBbtaHaSSO4ymhBXs9qnRPZLicNgBtJ6m6EIIY4uDRidwoqLmvLrhuxuChCDbhsAL4mCZjohCEH/2Q==');
+        }
+        
+        #message-input {
+            /* width: 100%; */
+            padding: 5px;
+        }
+        
+        .user-message {
+            text-align: right;
+            color: black;
+        }
+        
+        .bot-message {
+            text-align: left;
+            color: black;
+        }
+    </style>
+</head>
+
+<body class="container mt-3">
+
+    <div id="chat-box" class="mx-auto"></div>
+    <input type="text" id="message-input" class="form-control mt-3" placeholder="Type a message...">
+    <div class="input-group-append">
+        <button onclick="sendMessage()" class="btn btn-secondary">Send <i class="bi bi-send"></i></button>
+    </div>
+
+    <!-- <button onclick="sendMessage()" class="btn btn-primary mt-3">Send</button> -->
+    <script src="chat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
+
+
+</body>
+
+</html>
