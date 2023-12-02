@@ -30,7 +30,7 @@ function showMyOrder(products) {
       <tr>
       <td align="center" style="vertical-align:middle;">${products[i].order_no}</td>
       <td align="center" style="vertical-align:middle;">
-        <img src="../${products[i].image}" alt="" height="100px" />
+        <img src="${products[i].image}" alt="" height="100px" />
       </td>
       <td align="center" style="vertical-align:middle;">${products[i].name}</td>
       <td align="center" style="vertical-align:middle;">&#8377; ${products[i].price}</td>
