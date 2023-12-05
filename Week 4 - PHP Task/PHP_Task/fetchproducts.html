@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>fetchproducts</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+/>
+<link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+/>
+<link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+/>
+<link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
+    rel="stylesheet"
+/>
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+/>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd"
+    crossorigin="anonymous"
+/>
+</head>
+    <script>
+        
+        function fetchproducts(searchTerm = null) {
+            $.ajax({
+                url: 'http://localhost/PHP_Task/api/fetchproducts.php',
+                type: 'GET',
+                data: { search: searchTerm },
+                dataType: 'html',
+                success: function(response) {
+                    $('#product-listing').html(response);
+                },
+                error: function(error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+
+        
+        $(document).ready(function() {
+            
+            fetchproducts();
+
+            
+            $('#fetch-all').click(function() {
+                fetchproducts();
+            });
+
+           
+            $('#search').click(function() {
+                var searchTerm = $('#search-term').val();
+                fetchproducts(searchTerm);
+            });
+        });
+         
+        
+function deletefromcart() {
+    
+    $.ajax({
+        url: "http://localhost/PHP_Task/api/deletefromcart.php",
+        type: "POST",
+        success: function(response) {
+            console.log(response);
+            if (response.status) {
+                alert("Entries deleted successfully!");
+            } else {
+                alert("Failed to delete entries. " + response.message);
+            }
+        },
+        error: function() {
+            alert("Error deleting entries.");
+        }
+    });
+}
+
+function logout() {
+    localStorage.removeItem("token");
+    location.href = "./../login.html";
+}
+
+        
+    </script>
+     <style>
+        .secondnavbar{
+          background-color:mediumseagreen;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          height: 160px;
+        }
+        .text1 form { 
+                max-width: 500px;
+                margin: 0 auto;
+        }
+        .text1 input {
+                height: 30px;
+                font-size: 14px;
+         }
+          .text1 button {
+                height: 30px;
+                font-size: 14px;
+                margin-left: 5px;
+          }
+        
+       </style>
+      </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-light text-secondary mb-1">
+            <div class="container-fluid">
+              <a class="navbar-brand ms-5 me-5" href="#"><span style="color:seagreen;"><i class="fa-solid fa-truck"></i>Olx</span>Clone</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ms-auto">
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown">user<span style="color: mediumseagreen;"><i class="fa-solid fa-user"></i></span></a>
+                    <ul class="dropdown-menu ">
+                      <li><a class="dropdown-item text-secondary" href="#"><i class="fa-solid fa-house"></i> user</a></li>
+                      <li><a class="dropdown-item text-secondary" href="#"><i class="fa-brands fa-windows"></i> My ads</a></li>
+                      <li><a class="dropdown-item text-secondary" href="#"><i class="fa-brands fa-windows"></i> My Paid ads</a></li>
+                      <li><a class="dropdown-item text-secondary" href="#"><i class="fa-brands fa-windows"></i> My Nonpaid ads</a></li>
+                      <li><a class="dropdown-item text-secondary" href="#"><i class="fa-solid fa-heart"></i> Favourite ads</a></li>
+                      <li><a class="dropdown-item text-secondary" href="#"><i class="fa-solid fa-folder"></i> Archived ads</a></li>
+                      <li><a class="dropdown-item text-secondary" href="#"><i class="fa-solid fa-hourglass-end"></i> Renew Ads</a></li>
+                      <li><a class="dropdown-item text-secondary" href="#"><i class="fa-brands fa-windows"></i> Create New Ads</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link me-5" href="#"><span style="color: mediumseagreen;"><i class="fa-solid fa-bell"></i></span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link me-5" href="#"><span style="color: mediumseagreen;"><i class="fa-solid fa-envelope"></i></span></a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link me-5" href="#"><span style="color: mediumseagreen;"><i class="fa-solid fa-message"></i></span></a>
+                  </li>  
+                  <li class="nav-item">
+                    <a class="nav-link me-5" href="./products.html"><span style="color: mediumseagreen;"> AddProducts</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link ms-5 me-5" onclick="logout()" href="#"><span style="color: red;">Sign out <i class="fa-solid fa-power-off"></i></span></a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+          </nav>
+    
+          <div class="container-fluid">
+            <div class=" secondnavbar row align-items-center">
+              <div class=" text1 col text-center text-white mt-2 mb-5">
+                <h2>Buy,Sell & Exchage Product You want!!!</h2>
+                 
+                <div class="mt-2">
+               
+                  <div class="container">
+                      <div class="row justify-content-center">
+                          <div class="col-md-4">
+                              <button id="fetch-all">Fetch All Products</button><br><br>
+                              
+                              <input type="text" id="search-term" placeholder="search by title" />
+                              <button id="search">Search</button>
+                  
+                  
+                              <div id="product-listing" class="mt-5"></div>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+
+</body>
+</html>
